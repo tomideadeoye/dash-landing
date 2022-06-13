@@ -1,0 +1,312 @@
+* {
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 600;
+	margin: 0;
+	padding: 0;
+	color: #f4f6ff;
+}
+
+body {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	background-color: #14243b;
+	overflow-x: hidden;
+}
+
+/* NAV SECTION==================================================================================== */
+
+.headerSection {
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 70px;
+	margin-top: 70px;
+}
+
+.navBox {
+	padding: 10px;
+	display: flex;
+	flex-direction: row;
+	border-radius: 20px;
+	background-color: #14243b;
+	border: 1px solid #6c89aa;
+	box-sizing: border-box;
+	box-shadow: 0 4px 15px 2.5px rgba(2, 8, 16, 0.65);
+	width: 100%;
+	height: 98px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	width: 125.99px;
+	height: 42.06px;
+	margin-left: 20px;
+	margin-right: 348px;
+}
+
+.navItems {
+	display: flex;
+	width: 332px;
+	flex-direction: row;
+	width: 331px;
+	height: 24px;
+	font-size: 16px;
+	justify-content: space-around;
+}
+
+.navItem {
+	list-style: none;
+	margin: 5px;
+	cursor: pointer;
+}
+
+.navItem:hover {
+	text-decoration: underline;
+}
+
+.icon {
+	width: 34px;
+	height: 34px;
+}
+.lineDivider {
+	border-right: 1px solid #f4f6ff;
+	width: 1px;
+	height: 43px;
+}
+.button {
+	padding: 5px;
+	border: 1px solid #f1962c;
+	border-radius: 17px;
+	height: 57.69px;
+	width: 152px;
+}
+/* NAV SECTION ENDS ============================================================================================================*/
+
+/* HERO SECTION BEGINS ============================================================================================================*/
+.heroSection {
+	/* margin: 191px, 105px; */
+	margin: 60px;
+}
+.heroTitle {
+	height: 120px;
+	font-size: 80px;
+	font-weight: 700;
+	line-height: 120px;
+	letter-spacing: 0em;
+	text-align: left;
+	display: inline-block;
+}
+
+.heroCash {
+	font-size: 100px;
+}
+
+.heroSectionTexts {
+	height: 120px;
+	width: 564px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: right;
+	width: 100%;
+	height: 100%;
+}
+
+.appImage {
+	width: 395.19px;
+	height: 593.29px;
+}
+
+.phoneNo {
+	color: #14243b;
+}
+
+.slideContact {
+	margin-top: 42px;
+	align-items: center;
+	/* justify-content: center; */
+	background-color: #fff;
+	height: 55px;
+	width: 500px;
+	border-radius: 17px;
+}
+
+.platformIcon {
+	margin: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 500px;
+}
+
+.platformIcon p {
+	margin-left: 20px;
+}
+
+.platformIcon img {
+	position: relative;
+	top: 5px;
+	width: 20px;
+	height: 20px;
+	margin-left: 10px;
+}
+
+/* HERO SECTION ENDS =======================================================================================*/
+
+.heroText {
+	font-weight: 400;
+	font-size: 35px;
+	margin-top: 25px;
+}
+
+.groupIcon1 {
+	width: 125.99px;
+	height: 42.06px;
+	width: 298px;
+	height: 100px;
+}
+
+.lineDiv {
+	box-sizing: border-box;
+}
+
+.rectangleDiv1 {
+	border-radius: 17px;
+	background-color: #f4f6ff;
+	border: 1px solid #f4f6ff;
+	width: 500px;
+	height: 55px;
+}
+.rectangleButton {
+	display: flex;
+	flex-direction: row;
+	width: 258px;
+	height: 90%;
+	border-radius: 17px;
+	background-color: #14243b;
+	border: 1px solid #f4f6ff;
+	justify-content: center;
+	align-items: center;
+}
+
+.slideToDash img {
+	margin-left: 20px;
+	width: 20px;
+	height: 20px;
+}
+
+.slideContact p {
+	margin-left: 10px;
+}
+
+.slideToDash {
+	color: #f1962c;
+}
+
+.vectorIcon {
+	width: 21px;
+	height: 24px;
+}
+
+.doloremIpsumQuiaDolorSit {
+	font-size: 25px;
+	line-height: 30px;
+	font-weight: 300;
+	color: #fff;
+	width: 425px;
+	height: 120px;
+}
+.doloremIpsumQuiaDolorSit1,
+.recieveMoneyDiv {
+	font-size: 30px;
+	font-weight: 600;
+	display: inline-block;
+}
+.doloremIpsumQuiaDolorSit1 {
+	font-size: 25px;
+	line-height: 30px;
+	font-weight: 300;
+	color: #fff;
+	width: 425px;
+	height: 119px;
+}
+
+.recieveCash011 {
+	width: 54px;
+	height: 40px;
+}
+.giveMoney011,
+.marketplace011Icon {
+	width: 52px;
+	height: 52px;
+	overflow: hidden;
+}
+.giveMoney011 {
+	width: 53px;
+	height: 39px;
+}
+
+/* FEATURE SECTION =========================================================================================================*/
+
+.features {
+	margin-top: 900px;
+}
+
+.featureBox {
+	display: flex;
+	flex-direction: row;
+	margin: 40px;
+}
+
+.iconBox {
+	display: flex;
+	flex-direction: row;
+	box-shadow: 0 4px 15px 2.5px rgba(2, 8, 16, 0.65);
+	border: 1px solid #f1962c;
+	margin: 2px;
+	justify-content: center;
+	align-items: center;
+	height: 120px;
+	width: 132.92308044433594px;
+	border-radius: 30px;
+}
+
+.featureTextBox {
+	display: block;
+	width: 425px;
+	height: 119px;
+	margin-left: 20px;
+}
+
+.featureTextBox p {
+	font-style: normal;
+	font-weight: 300;
+	font-size: 15px;
+}
+
+.featureText {
+	font-weight: 300;
+	font-size: 25px;
+	line-height: 30px;
+}
+
+.featureTitle {
+	font-size: 40px;
+	margin-top: 90px;
+}
+
+/* FEATURES SECTION ENDS =====================================================================================*/
+
+/* DIVIDER======================================================================================================== */
+.divider {
+	position: relative;
+	bottom: 0;
+	margin-top: 50px;
+	width: 100%;
+	height: 16px;
+	padding: 0;
+}
