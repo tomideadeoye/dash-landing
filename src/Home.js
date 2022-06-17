@@ -1,16 +1,19 @@
 import Features from "./Components/features";
 import Header from "./Components/Header";
 import HeroSection from "./Components/HeroSection";
+import DashMarketPlace from "./Components/DashMarketPlace";
+import ReceiveAndManage from "./Components/ReceiveAndManage";
 import styles from "./css/Home.module.css";
-
-import CssBaseline from "@mui/material/CssBaseline";
 
 export const Home = () => {
 	return (
 		<div className="home">
-			<CssBaseline /> <Header />
+			<Header />
 			<HeroSection />
 			<Features />
+			<img className={styles.divider} alt="" src="divider.png" />
+			<DashMarketPlace />
+			<ReceiveAndManage />
 			<img className={styles.divider} alt="" src="divider.png" />
 		</div>
 	);

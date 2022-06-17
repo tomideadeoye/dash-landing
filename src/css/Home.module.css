@@ -13,7 +13,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	background-color: #14243b;
-	overflow-x: hidden;
+	width: 100%;
 }
 
 /* NAV SECTION==================================================================================== */
@@ -42,17 +42,16 @@ body {
 }
 
 .logo {
-	width: 125.99px;
-	height: 42.06px;
-	margin-left: 20px;
-	margin-right: 348px;
+	width: 7.8125rem;
+	height: 2.625rem;
+	margin-left: 1.25rem;
+	margin-right: 21.75rem;
 }
 
 .navItems {
 	display: flex;
-	width: 332px;
 	flex-direction: row;
-	width: 331px;
+	width: 20.6875rem;
 	height: 24px;
 	font-size: 16px;
 	justify-content: space-around;
@@ -82,7 +81,7 @@ body {
 	border: 1px solid #f1962c;
 	border-radius: 17px;
 	height: 57.69px;
-	width: 152px;
+	width: 9.5rem;
 }
 /* NAV SECTION ENDS ============================================================================================================*/
 
@@ -107,7 +106,6 @@ body {
 
 .heroSectionTexts {
 	height: 120px;
-	width: 564px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -117,7 +115,7 @@ body {
 }
 
 .appImage {
-	width: 395.19px;
+	width: 24.6875rem;
 	height: 593.29px;
 }
 
@@ -128,10 +126,9 @@ body {
 .slideContact {
 	margin-top: 42px;
 	align-items: center;
-	/* justify-content: center; */
 	background-color: #fff;
 	height: 55px;
-	width: 500px;
+	width: 31.25rem;
 	border-radius: 17px;
 }
 
@@ -140,7 +137,7 @@ body {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	width: 500px;
+	width: 31.25rem;
 }
 
 .platformIcon p {
@@ -164,8 +161,6 @@ body {
 }
 
 .groupIcon1 {
-	width: 125.99px;
-	height: 42.06px;
 	width: 298px;
 	height: 100px;
 }
@@ -178,13 +173,13 @@ body {
 	border-radius: 17px;
 	background-color: #f4f6ff;
 	border: 1px solid #f4f6ff;
-	width: 500px;
+	width: 31.25rem;
 	height: 55px;
 }
 .rectangleButton {
 	display: flex;
 	flex-direction: row;
-	width: 258px;
+	width: 16.125rem;
 	height: 90%;
 	border-radius: 17px;
 	background-color: #14243b;
@@ -217,7 +212,7 @@ body {
 	line-height: 30px;
 	font-weight: 300;
 	color: #fff;
-	width: 425px;
+	width: 26.5625rem;
 	height: 120px;
 }
 .doloremIpsumQuiaDolorSit1,
@@ -231,7 +226,7 @@ body {
 	line-height: 30px;
 	font-weight: 300;
 	color: #fff;
-	width: 425px;
+	width: 26.5625rem;
 	height: 119px;
 }
 
@@ -253,7 +248,7 @@ body {
 /* FEATURE SECTION =========================================================================================================*/
 
 .features {
-	margin-top: 900px;
+	margin-top: 56.25rem;
 }
 
 .featureBox {
@@ -271,13 +266,13 @@ body {
 	justify-content: center;
 	align-items: center;
 	height: 120px;
-	width: 132.92308044433594px;
+	width: 8.3077rem;
 	border-radius: 30px;
 }
 
 .featureTextBox {
 	display: block;
-	width: 425px;
+	width: 26.5625rem;
 	height: 119px;
 	margin-left: 20px;
 }
@@ -303,10 +298,11 @@ body {
 
 /* DIVIDER======================================================================================================== */
 .divider {
-	position: relative;
-	bottom: 0;
-	margin-top: 50px;
-	width: 100%;
+	/* width: 100%; */
+	margin-top: 56px;
 	height: 16px;
 	padding: 0;
+	margin: 0;
+	position: relative;
+	top: 10px;
 }

@@ -1,0 +1,164 @@
+/* MARKET PALCE ================== */
+
+.sectionBox {
+	flex-shrink: 0;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	width: 1440px;
+	height: 649px;
+	background: linear-gradient(258.71deg, #f4f6ff, rgba(255, 255, 255, 0.87));
+	padding: 63px 91px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.textsBox {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.textsBox h1 {
+	font-size: 40px;
+	font-weight: 600;
+	text-align: left;
+	color: #000;
+	margin-bottom: 58px;
+}
+
+.textsBox p {
+	color: #000;
+	font-size: 25px;
+	line-height: 40px;
+	font-weight: 300;
+	width: 671px;
+	flex-shrink: 0;
+}
+
+.textsBox img {
+	width: 502px;
+	height: 57px;
+	flex-shrink: 0;
+	margin-left: 90px;
+}
+
+.sectionImage {
+	width: 486px;
+	height: 445px;
+	flex-shrink: 0;
+	object-fit: cover;
+}
+
+/* MARKET PALCE ENDS ================== */
+
+/* SEND MONEY  ================== */
+.sendMoney {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.SendMoneyVideoBox {
+	/* position: relative; */
+	/* top: 90px; */
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	border: 10px;
+	background-color: #14243b;
+	width: 800px;
+	height: 440px;
+	margin-top: -200px;
+	border-radius: 50px;
+}
+
+.vid01011Icon {
+	width: 100%;
+	object-fit: cover;
+	flex-shrink: 0;
+}
+
+.sendMoneyBox {
+	flex-shrink: 0;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	width: 1440px;
+	height: 863px;
+	background-color: #fff;
+	padding: 63px 91px;
+	display: flex;
+	flex-direction: row;
+	/* align-items: center; */
+	/* justify-content: center; */
+}
+
+.sendMoneyTextsBox {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	/* justify-content: center; */
+}
+
+.sendMoneyImage {
+	width: 539px;
+	height: 366.13px;
+	flex-shrink: 0;
+}
+
+.onboardingVideo {
+	position: absolute;
+	flex-shrink: 0;
+	border-radius: 10px;
+	width: 184px;
+	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: 0em;
+	color: #14243b;
+	text-align: center;
+	font-size: 20px;
+}
+.onboardingVideo img {
+	width: 158px;
+}
+
+/* SEND MONEY ENDS ================== */
+
+/* RECEIVE AND MANAGE MONEY  ================== */
+.receiveAndManageMoneyBox {
+	flex-shrink: 0;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	width: 1440px;
+	height: 649px;
+	padding: 63px 91px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	color: white;
+}
+.receiveAndManageSectionTitle {
+	font-weight: 600;
+	margin-bottom: 58px;
+}
+.receiveAndManageSectionText {
+	font-size: 25px;
+	line-height: 40px;
+	font-weight: 300;
+	width: 671px;
+	flex-shrink: 0;
+}
+
+/* RECEIVE AND MANAGE MONEY ENDS ================== */
+
+.light {
+	color: #fff !important;
+}
