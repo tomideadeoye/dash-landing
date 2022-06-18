@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./SwipeableButton.css";
+import styles from "../css/Home.module.css";
 
 const slider = React.createRef();
 const container = React.createRef();
@@ -80,9 +81,13 @@ export default class SwipeableButton extends Component {
 	};
 
 	getText = () => {
-		return this.state.unlocked
-			? this.props.text_unlocked || "UNLOCKED"
-			: this.props.text || "SLIDE";
+		return this.state.unlocked ? (
+			"Thank You"
+		) : (
+			<form className={styles.phoneNo}>
+				<input type="text" value="" placeholder="Enter your phone number" />
+			</form>
+		);
 	};
 
 	reset = () => {
@@ -114,7 +119,12 @@ export default class SwipeableButton extends Component {
 						style={{ background: this.props.color }}
 						onTouchStart={this.startDrag}
 					>
-						<span className="rsbcSliderText">{this.getText()}</span>
+						{this.state.unlocked ? (
+							<span className="rsbcSliderText">Thank You</span>
+						) : (
+							<span className="rsbcSliderText">Slide to Dash</span>
+						)}
+						{/* <span className="rsbcSliderText">{this.getText()}</span> */}
 						<span className="rsbcSliderArrow"></span>
 						<span
 							className="rsbcSliderCircle"
@@ -126,14 +136,4 @@ export default class SwipeableButton extends Component {
 			</div>
 		);
 	}
-}
-{
-	/* <form>
-<input
-    type="text"
-    value=""
-    placeholder="Enter your phone number"
-    className={styles.phoneNo}
-/>
-</form> */
 }

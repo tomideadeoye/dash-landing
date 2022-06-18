@@ -76,7 +76,7 @@ function HeroSection() {
 						<SwipeableButton
 							onSuccess={onSuccess}
 							color="#14243b"
-							text="Slide to dash"
+							text="Enter your phone number"
 						/>
 					</Box>
 
@@ -188,7 +188,7 @@ function DashMarketPlace() {
 					<SwipeableButton
 						onSuccess={onSuccess}
 						color="#14243b"
-						text="Slide to dash"
+						text="Enter your phone number"
 					/>
 				</div>
 				<img
@@ -206,7 +206,7 @@ function DashMarketPlace() {
 						<SwipeableButton
 							onSuccess={onSuccess}
 							color="#14243b"
-							text="Slide to dash"
+							text="Enter your phone number"
 						/>
 					</div>
 				</div>
@@ -240,7 +240,7 @@ function ReceiveAndManage() {
 					<SwipeableButton
 						onSuccess={onSuccess}
 						color="#14243b"
-						text="Slide to dash"
+						text="Enter your phone number"
 					/>
 				</div>
 				<img className={styles.sectionImage} alt="" src="image-2@2x.png" />
@@ -253,7 +253,7 @@ function ReceiveAndManage() {
 					<SwipeableButton
 						onSuccess={onSuccess}
 						color="#14243b"
-						text="Slide to dash"
+						text="Enter your phone number"
 					/>
 				</div>
 			</div>

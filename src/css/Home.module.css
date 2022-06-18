@@ -143,6 +143,14 @@ body {
 }
 
 .phoneNo {
+	width: 100%;
+	height: 100%;
+}
+
+.phoneNo > input {
+	width: 100%;
+	height: 100%;
+	padding-left: 50%;
 	color: #14243b;
 }
 
@@ -345,8 +353,6 @@ body {
 }
 
 .SendMoneyVideoBox {
-	/* position: relative; */
-	/* top: 90px; */
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -376,8 +382,6 @@ body {
 	padding: 63px 91px;
 	display: flex;
 	flex-direction: row;
-	/* align-items: center; */
-	/* justify-content: center; */
 }
 
 .sendMoneyTextsBox {
