@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import "./SwipeableButton.css";
-import styles from "../css/Home.module.css";
+import ArrowForwardSharpIcon from "@mui/icons-material/ArrowForwardSharp";
 
 const slider = React.createRef();
 const container = React.createRef();
@@ -47,8 +47,10 @@ export default class SwipeableButton extends Component {
 		if (this.unmounted || this.state.unlocked) return;
 		if (this.isDragging) {
 			this.isDragging = false;
-			if (this.sliderLeft > this.containerWidth * 0.9) {
-				this.sliderLeft = this.containerWidth;
+			if (this.sliderLeft >= this.containerWidth * 0.4) {
+				// this.sliderLeft = 9;
+				slider.current.style.left = this.sliderLeft - 185 + "px";
+				// this.sliderLeft = this.containerWidth + 200;
 				if (this.props.onSuccess) {
 					this.props.onSuccess();
 					this.onSuccess();
@@ -72,22 +74,16 @@ export default class SwipeableButton extends Component {
 			this.startX = e.clientX;
 		}
 	};
-
+	onChange = (e) => {
+		this.setState({ inputValue: e.target.value });
+	};
 	onSuccess = () => {
 		container.current.style.width = container.current.clientWidth + "px";
 		this.setState({
 			unlocked: true,
 		});
-	};
-
-	getText = () => {
-		return this.state.unlocked ? (
-			"Thank You"
-		) : (
-			<form className={styles.phoneNo}>
-				<input type="text" value="" placeholder="Enter your phone number" />
-			</form>
-		);
+		// WHEN THE DRAG IS SUCCESSFUL, WE NEED TO  DO SOMETHING AND RESET THE INPUT VALUE
+		alert(this.state.inputValue);
 	};
 
 	reset = () => {
@@ -113,25 +109,34 @@ export default class SwipeableButton extends Component {
 					ref={container}
 				>
 					<div
-						className="rsbcSlider"
+						className={
+							"rsbcSlider " + (this.state.unlocked ? "rsbcSliderUnlocked" : "")
+						}
 						ref={slider}
 						onMouseDown={this.startDrag}
-						style={{ background: this.props.color }}
 						onTouchStart={this.startDrag}
 					>
 						{this.state.unlocked ? (
-							<span className="rsbcSliderText">Thank You</span>
+							<span>Thank You</span>
 						) : (
-							<span className="rsbcSliderText">Slide to Dash</span>
+							<div>
+								<span>Slide to Dash</span>
+								<div className="materialArrowIcon">
+									<ArrowForwardSharpIcon style={{ fill: "#F1962C" }} />
+								</div>
+							</div>
 						)}
-						{/* <span className="rsbcSliderText">{this.getText()}</span> */}
-						<span className="rsbcSliderArrow"></span>
-						<span
-							className="rsbcSliderCircle"
-							style={{ background: this.props.color }}
-						></span>
 					</div>
-					<div className="rsbcText">{this.getText()}</div>
+					<div className="sliderInputText">
+						<form>
+							<input
+								onChange={this.onChange}
+								type="text"
+								value={this.state.inputValue}
+								placeholder="Enter your phone number"
+							/>
+						</form>
+					</div>
 				</div>
 			</div>
 		);

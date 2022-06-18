@@ -67,34 +67,34 @@ function HeroSection() {
 
 					{/* SLIDE TO DASH BUTTON ON THE HERO SECTION */}
 
-					<Box
+					{/* <Box
 						sx={{
 							display: "flex",
 						}}
 						className={styles.slideContact}
-					>
+					> */}
+					<div style={{ width: 500, height: 200 }}>
 						<SwipeableButton
 							onSuccess={onSuccess}
 							color="#14243b"
 							text="Enter your phone number"
 						/>
-					</Box>
-
-					<Box
-						sx={{
-							display: "flex",
-						}}
-						className={styles.platformIcon}
-					>
-						<p>
-							Google Play
-							<img alt="" src="vector.svg" />
-						</p>
-						<p>
-							App Store
-							<img alt="" src="vector1.svg" />
-						</p>
-					</Box>
+						<Box
+							sx={{
+								display: "flex",
+							}}
+							className={styles.platformIcon}
+						>
+							<p>
+								Google Play
+								<img alt="" src="vector.svg" />
+							</p>
+							<p>
+								App Store
+								<img alt="" src="vector1.svg" />
+							</p>
+						</Box>
+					</div>
 
 					{/* SLIDE TO DASH BUTTON - GOOGLE/APPLE ICONS */}
 				</div>
@@ -185,11 +185,14 @@ function DashMarketPlace() {
 				<div className={styles.textsBox}>
 					<h1 className={styles.sectionTitle}>Dash Market Place</h1>
 					<p className={styles.sectionText}>{content.marketPlace}</p>
-					<SwipeableButton
-						onSuccess={onSuccess}
-						color="#14243b"
-						text="Enter your phone number"
-					/>
+					<div style={{ width: 500, height: 200 }}>
+						{" "}
+						<SwipeableButton
+							onSuccess={onSuccess}
+							color="#14243b"
+							text="Enter your phone number"
+						/>
+					</div>
 				</div>
 				<img
 					className={styles.sectionImage}
@@ -203,11 +206,13 @@ function DashMarketPlace() {
 					<div className={styles.textsBox}>
 						<h1>Send money</h1>
 						<p>{content.marketPlace}</p>
-						<SwipeableButton
-							onSuccess={onSuccess}
-							color="#14243b"
-							text="Enter your phone number"
-						/>
+						<div style={{ width: 500, height: 200 }}>
+							<SwipeableButton
+								onSuccess={onSuccess}
+								color="#14243b"
+								text="Enter your phone number"
+							/>
+						</div>
 					</div>
 				</div>
 				<div className={styles.SendMoneyVideoBox}>
@@ -237,11 +242,13 @@ function ReceiveAndManage() {
 				<div className={styles.textsBox}>
 					<h1 className={styles.light}>Recieve money</h1>
 					<p className={styles.light}>{content.receiveMoney}</p>
-					<SwipeableButton
-						onSuccess={onSuccess}
-						color="#14243b"
-						text="Enter your phone number"
-					/>
+					<div style={{ width: 500, height: 200 }}>
+						<SwipeableButton
+							onSuccess={onSuccess}
+							color="#14243b"
+							text="Enter your phone number"
+						/>
+					</div>
 				</div>
 				<img className={styles.sectionImage} alt="" src="image-2@2x.png" />
 			</div>
@@ -250,11 +257,14 @@ function ReceiveAndManage() {
 				<div className={styles.textsBox}>
 					<h1 className={styles.light}>Financial management</h1>
 					<p className={styles.light}>{content.receiveMoney}</p>
-					<SwipeableButton
-						onSuccess={onSuccess}
-						color="#14243b"
-						text="Enter your phone number"
-					/>
+
+					<div style={{ width: 500, height: 200 }}>
+						<SwipeableButton
+							onSuccess={onSuccess}
+							color="#14243b"
+							text="Enter your phone number"
+						/>
+					</div>
 				</div>
 			</div>
 		</>

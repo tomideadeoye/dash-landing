@@ -16,93 +16,101 @@
                                     not supported by any browser */
 }
 .rsbContainer {
+	border: 2px solid white;
 	float: left;
 	width: 100%;
 	height: 100%;
 	background: #eee;
-	border-radius: 50px;
+	border-radius: 17px;
 	position: relative;
-	/* box-shadow: inset 1px 1px 4px rgba(0,0,0,0.1); */
 	overflow: hidden;
+	border: 0.25px solid #6c89aa;
 }
 .rsbContainerUnlocked {
-	width: 50% !important;
-	margin-left: 25%;
+	width: 100% !important;
+	margin-left: 15%;
 	transition: 0.5s;
-	cursor: default;
 }
 .rsbContainerUnlocked .rsbcSlider {
-	left: 100% !important;
+	/* left: 100% !important; */
 	cursor: default;
+	width: 100% !important;
 	pointer-events: none;
 }
-.rsbContainerUnlocked .rsbcSliderArrow {
+.rsbContainerUnlocked .rsbcSliderArrow,
+rsbcSliderCircle {
 	transition: 0.5s;
-	margin-right: -60px;
 }
-.rsbContainerUnlocked .rsbcSliderCircle {
-	transition: 0.5s;
-	margin-right: -60px;
-}
+
 .rsbcSlider {
-	float: left;
+	display: flex;
+	flex-direction: row;
+	margin: 2px;
+	text-align: right;
+	align-items: center;
+	justify-content: flex-end;
 	width: 100%;
+	height: 90%;
 	position: absolute;
-	height: 50px;
 	top: 0;
 	left: 50px;
-	margin-left: -70%;
+	margin-left: -60%;
 	background: #333;
-	border-radius: 25px;
+	border-radius: 17px;
 	z-index: 100;
 	/* box-shadow: 1px 1px 5px rgba(0,0,0,0.3); */
 	cursor: pointer;
-}
-.rsbcSliderText {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	line-height: 50px;
-	text-align: center;
+	background: #14243b;
 	letter-spacing: 2px;
 	color: #fff;
 	font-size: 13px;
 }
-.rsbcSliderArrow {
-	float: left;
-	position: absolute;
-	transform: rotate(45deg);
-	border: 2px solid #fff;
-	height: 8px;
-	width: 8px;
-	top: 50%;
-	right: 22px;
-	margin-top: -6px;
-	border-left-color: transparent;
-	border-bottom-color: transparent;
-	transform-origin: center;
-	z-index: 10;
+.rsbcSlider > div {
+	display: flex;
+	flex-direction: row;
+	text-align: right;
+	align-items: center;
+	justify-content: flex-end;
 }
-.rsbcSliderCircle {
-	position: absolute;
-	right: 0;
-	background: #444;
-	top: 0;
-	height: 50px;
-	width: 50px;
-	border-radius: 50%;
+
+.rsbcSlider > div > span {
+	margin-right: 20px;
+	color: #f1962c;
 }
-.rsbcText {
-	float: left;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 50px;
-	line-height: 50px;
-	text-align: center;
-	letter-spacing: 2px;
+.rsbcSlider > div > div {
+	margin: 0 20px 0 20px;
+}
+.rsbcSliderUnlocked {
+	margin-left: -53%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+.rsbcSliderUnlocked > span {
+	color: #f1962c;
+}
+
+/* SLIDER INPUT SECTION =========================== */
+.sliderInputText {
 	font-size: 13px;
-	color: #aaa;
+	color: #14243b;
+	height: 100%;
+	background-color: #f4f6ff;
+	border: 0.25px solid #6c89aa;
 }
+.sliderInputText > form {
+	width: 100%;
+	height: 100%;
+}
+.sliderInputText > form > input {
+	width: 100%;
+	height: 100%;
+	padding-left: 55%;
+	color: #14243b;
+	border: none;
+}
+.sliderInputText > form > input:focus {
+	outline: none !important;
+}
+/* SLIDER INPUT SECTION ENDS =========================== */
