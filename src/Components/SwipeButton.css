@@ -1,0 +1,116 @@
+.SwipeButtonContainer {
+	width: 31.25vw;
+	height: 3.125vw;
+	position: relative;
+	margin: 2.5vw 0px 2.5vw 0;
+	display: flex;
+	flex-direction: row;
+	border-radius: 11.0625vw;
+	overflow: hidden;
+	background-color: #fff;
+	align-items: center;
+}
+
+.swipeButton {
+	background-color: #14243b;
+	/* border: 0.125vw solid  #fff; */
+	width: 50%;
+	height: 95%;
+	border-radius: 11.0625vw;
+	position: relative;
+	overflow: hidden;
+}
+.swipeButtonUnlocked {
+	width: 100% !important;
+	margin-left: 15%;
+	transition: 0.5s;
+}
+.swipeButtonUnlocked .rsbcSlider {
+	/* left: 100% !important; */
+	cursor: default;
+	width: 100% !important;
+	pointer-events: none;
+}
+.swipeButtonUnlocked .rsbcSliderArrow,
+rsbcSliderCircle {
+	transition: 0.5s;
+}
+
+.rsbcSlider {
+	display: flex;
+	flex-direction: row;
+	margin: 0.125vw;
+	text-align: right;
+	align-items: center;
+	justify-content: flex-end;
+	width: 100%;
+	height: 90%;
+	position: absolute;
+	top: 0;
+	left: 3.125vw;
+	margin-left: -60%;
+	background: #333;
+	border-radius: 1.0625vw;
+	z-index: 100;
+	cursor: pointer;
+	background: #14243b;
+	letter-spacing: 0.125vw;
+	color: #fff;
+	font-size: 0.8125vw;
+}
+.rsbcSlider > div {
+	display: flex;
+	flex-direction: row;
+	text-align: right;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.rsbcSlider > div > span {
+	margin-right: 1.25vw;
+	color: #f1962c;
+}
+.rsbcSlider > div > div {
+	margin: 0 1.25vw 0 1.25vw;
+}
+.rsbcSliderUnlocked {
+	margin-left: -53%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+.rsbcSliderUnlocked > span {
+	color: #f1962c;
+}
+
+/* SLIDER INPUT SECTION =========================== */
+.sliderInputText {
+	font-size: 0.8125vw;
+	color: #14243b;
+	width: 50%;
+	height: 100%;
+	background-color: #f4f6ff;
+	/* border: 0.0156vw solid #6c89aa; */
+}
+.sliderInputText > form {
+	width: 100%;
+	height: 100%;
+}
+.sliderInputText > form > input {
+	padding: 0.3vw;
+	width: 100%;
+	height: 100%;
+	color: #14243b;
+	border: none;
+}
+.sliderInputText > form > input:focus {
+	outline: none !important;
+}
+/* SLIDER INPUT SECTION ENDS =========================== */
+
+.materialArrowIcon > * {
+	margin: 0 0.25vw;
+	width: 2vw;
+	fill: #f1962c;
+}

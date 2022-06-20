@@ -1,154 +1,99 @@
-import React, { Component, useState } from "react";
-import "./SwipeableButton.css";
+import React, { useState } from "react";
+import "./SwipeButton.css";
 import ArrowForwardSharpIcon from "@mui/icons-material/ArrowForwardSharp";
+import { Box } from "@mui/material";
 
-const slider = React.createRef();
-const container = React.createRef();
 const isTouchDevice = "ontouchstart" in document.documentElement;
 
-export default class SwipeableButton extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
-	// state = {};
+export default function SwipeableButton() {
+	const [inputValue, setInputValue] = useState("");
+	const [posted, setPosted] = useState(false);
 
-	componentDidMount() {
-		if (isTouchDevice) {
-			document.addEventListener("touchmove", this.onDrag);
-			document.addEventListener("touchend", this.stopDrag);
-		} else {
-			document.addEventListener("mousemove", this.onDrag);
-			document.addEventListener("mouseup", this.stopDrag);
-		}
-		this.containerWidth = container.current.clientWidth - 50;
-	}
-
-	onDrag = (e) => {
+	const onDrag = (e) => {
 		console.log("onDrag");
-		if (this.unmounted || this.state.unlocked) return;
-		if (this.isDragging) {
-			console.log("isDragging");
-			if (isTouchDevice) {
-				this.sliderLeft = Math.min(
-					Math.max(0, e.touches[0].clientX - this.startX),
-					this.containerWidth
-				);
-			} else {
-				this.sliderLeft = Math.min(
-					Math.max(0, e.clientX - this.startX),
-					this.containerWidth
-				);
-			}
-			this.updateSliderStyle();
-		}
+		if (posted) return;
+
+		// if (isDragging) {
+		console.log("isDragging");
+		// 	if (isTouchDevice) {
+		// 		sliderLeft = Math.min(
+		// 			Math.max(0, e.touches[0].clientX - startX),
+		// 			containerWidth
+		// 		);
+		// 	} else {
+		// 		sliderLeft = Math.min(Math.max(0, e.clientX - startX), containerWidth);
+		// 	}
+		// 	updateSliderStyle();
+		// }
+	};
+	const ondragend = () => {
+		console.log("Sned details to server");
+		// if (this.unmounted || this.state.unlocked) return;
+		// console.log(this.props.onSuccess(this.props.id));
+		// if (this.isDragging) {
+		// 	this.isDragging = false;
+		// 	if (this.sliderLeft >= this.containerWidth * 0.4) {
+		// 		// this.sliderLeft = 9;
+		// 		slider.current.style.left = this.sliderLeft - 185 + "vw";
+		// 		// this.sliderLeft = this.containerWidth + 200;
+		// 		if (this.props.onSuccess) {
+		// 			this.props.onSuccess();
+		// 			this.onSuccess();
+		// 		}
+		// 	} else {
+		// 		this.sliderLeft = 0;
+		// 		if (this.props.onFailure) {
+		// 			this.props.onFailure();
+		// 		}
+		// 	}
+		// 	this.updateSliderStyle();
+		// }
 	};
 
-	updateSliderStyle = () => {
-		if (this.unmounted || this.state.unlocked) return;
-		slider.current.style.left = this.sliderLeft + 50 + "vw";
+	const onChange = (e) => {
+		setInputValue(e.target.value);
 	};
 
-	stopDrag = () => {
-		if (this.unmounted || this.state.unlocked) return;
-		console.log(this.props.onSuccess(this.props.id));
-		if (this.isDragging) {
-			this.isDragging = false;
-			if (this.sliderLeft >= this.containerWidth * 0.4) {
-				// this.sliderLeft = 9;
-				slider.current.style.left = this.sliderLeft - 185 + "vw";
-				// this.sliderLeft = this.containerWidth + 200;
-				if (this.props.onSuccess) {
-					this.props.onSuccess();
-					this.onSuccess();
-				}
-			} else {
-				this.sliderLeft = 0;
-				if (this.props.onFailure) {
-					this.props.onFailure();
-				}
-			}
-			this.updateSliderStyle();
-		}
-	};
-
-	startDrag = (e) => {
-		if (this.unmounted || this.state.unlocked) return;
-		this.isDragging = true;
-		if (isTouchDevice) {
-			this.startX = e.touches[0].clientX;
-		} else {
-			this.startX = e.clientX;
-		}
-	};
-	onChange = (e) => {
-		this.setState({ inputValue: e.target.value });
-	};
-	onSuccess = () => {
-		container.current.style.width = container.current.clientWidth + "px";
-		this.setState({
-			unlocked: true,
-		});
-		// WHEN THE DRAG IS SUCCESSFUL, WE NEED TO  DO SOMETHING AND RESET THE INPUT VALUE
-		alert(this.state.inputValue);
-	};
-
-	reset = () => {
-		if (this.unmounted) return;
-		this.setState({ unlocked: false }, () => {
-			this.sliderLeft = 0;
-			this.updateSliderStyle();
-		});
-	};
-
-	componentWillUnmount() {
-		this.unmounted = true;
-	}
-
-	render() {
-		return (
-			<div style={{ width: "31.25vw" }}>
-				<div className="ReactSwipeButton">
-					<div
-						className={
-							"rsbContainer " +
-							(this.state.unlocked ? "rsbContainerUnlocked" : "")
-						}
-						ref={container}
-					>
-						<div
-							className={
-								"rsbcSlider " +
-								(this.state.unlocked ? "rsbcSliderUnlocked" : "")
-							}
-							ref={slider}
-							onMouseDown={this.startDrag}
-							onTouchStart={this.startDrag}
-						>
-							{this.state.unlocked ? (
-								<span>Thank You</span>
-							) : (
-								<div>
-									<span>Slide to Dash</span>
-									<div className="materialArrowIcon">
-										<ArrowForwardSharpIcon style={{ fill: "#F1962C" }} />
-									</div>
-								</div>
-							)}
-						</div>
-						<div className="sliderInputText">
-							<form>
-								<input
-									onChange={this.onChange}
-									type="text"
-									value={this.state.inputValue}
-									placeholder="Enter your phone number"
-								/>
-							</form>
-						</div>
+	// if (isTouchDevice) {
+	// 	document.addEventListener("touchmove", onDrag);
+	// 	document.addEventListener("touchend", stopDrag);
+	// } else {
+	// 	document.addEventListener("mousemove", onDrag);
+	// 	document.addEventListener("mouseup", stopDrag);
+	// }
+	return (
+		<div className="SwipeButtonContainer">
+			<div
+				className="swipeButton"
+				draggable="true"
+				onDrag={onDrag}
+				onDragEnd={ondragend}
+			>
+				<Box
+					sx={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						width: "100%",
+						height: "100%",
+					}}
+				>
+					<span>Slide to Dash</span>
+					<div className="materialArrowIcon">
+						<ArrowForwardSharpIcon />
 					</div>
-				</div>
+				</Box>
 			</div>
-		);
-	}
+			<div className="sliderInputText">
+				<form>
+					<input
+						type="text"
+						value={inputValue}
+						placeholder="Enter your phone number"
+						onChange={onChange}
+					/>
+				</form>
+			</div>
+		</div>
+	);
 }
