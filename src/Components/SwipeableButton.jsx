@@ -7,7 +7,11 @@ const container = React.createRef();
 const isTouchDevice = "ontouchstart" in document.documentElement;
 
 export default class SwipeableButton extends Component {
-	state = {};
+	constructor(props) {
+		super(props);
+		this.state = {};
+	}
+	// state = {};
 
 	componentDidMount() {
 		if (isTouchDevice) {
@@ -21,8 +25,10 @@ export default class SwipeableButton extends Component {
 	}
 
 	onDrag = (e) => {
+		console.log("onDrag");
 		if (this.unmounted || this.state.unlocked) return;
 		if (this.isDragging) {
+			console.log("isDragging");
 			if (isTouchDevice) {
 				this.sliderLeft = Math.min(
 					Math.max(0, e.touches[0].clientX - this.startX),
@@ -40,16 +46,17 @@ export default class SwipeableButton extends Component {
 
 	updateSliderStyle = () => {
 		if (this.unmounted || this.state.unlocked) return;
-		slider.current.style.left = this.sliderLeft + 50 + "px";
+		slider.current.style.left = this.sliderLeft + 50 + "vw";
 	};
 
 	stopDrag = () => {
 		if (this.unmounted || this.state.unlocked) return;
+		console.log(this.props.onSuccess(this.props.id));
 		if (this.isDragging) {
 			this.isDragging = false;
 			if (this.sliderLeft >= this.containerWidth * 0.4) {
 				// this.sliderLeft = 9;
-				slider.current.style.left = this.sliderLeft - 185 + "px";
+				slider.current.style.left = this.sliderLeft - 185 + "vw";
 				// this.sliderLeft = this.containerWidth + 200;
 				if (this.props.onSuccess) {
 					this.props.onSuccess();
@@ -100,42 +107,45 @@ export default class SwipeableButton extends Component {
 
 	render() {
 		return (
-			<div className="ReactSwipeButton">
-				<div
-					className={
-						"rsbContainer " +
-						(this.state.unlocked ? "rsbContainerUnlocked" : "")
-					}
-					ref={container}
-				>
+			<div style={{ width: "31.25vw" }}>
+				<div className="ReactSwipeButton">
 					<div
 						className={
-							"rsbcSlider " + (this.state.unlocked ? "rsbcSliderUnlocked" : "")
+							"rsbContainer " +
+							(this.state.unlocked ? "rsbContainerUnlocked" : "")
 						}
-						ref={slider}
-						onMouseDown={this.startDrag}
-						onTouchStart={this.startDrag}
+						ref={container}
 					>
-						{this.state.unlocked ? (
-							<span>Thank You</span>
-						) : (
-							<div>
-								<span>Slide to Dash</span>
-								<div className="materialArrowIcon">
-									<ArrowForwardSharpIcon style={{ fill: "#F1962C" }} />
+						<div
+							className={
+								"rsbcSlider " +
+								(this.state.unlocked ? "rsbcSliderUnlocked" : "")
+							}
+							ref={slider}
+							onMouseDown={this.startDrag}
+							onTouchStart={this.startDrag}
+						>
+							{this.state.unlocked ? (
+								<span>Thank You</span>
+							) : (
+								<div>
+									<span>Slide to Dash</span>
+									<div className="materialArrowIcon">
+										<ArrowForwardSharpIcon style={{ fill: "#F1962C" }} />
+									</div>
 								</div>
-							</div>
-						)}
-					</div>
-					<div className="sliderInputText">
-						<form>
-							<input
-								onChange={this.onChange}
-								type="text"
-								value={this.state.inputValue}
-								placeholder="Enter your phone number"
-							/>
-						</form>
+							)}
+						</div>
+						<div className="sliderInputText">
+							<form>
+								<input
+									onChange={this.onChange}
+									type="text"
+									value={this.state.inputValue}
+									placeholder="Enter your phone number"
+								/>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>

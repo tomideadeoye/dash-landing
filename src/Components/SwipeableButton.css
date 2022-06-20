@@ -1,9 +1,9 @@
 .ReactSwipeButton {
 	float: left;
 	width: 100%;
-	height: 50px;
+	height: 3.125vw;
 	position: relative;
-	margin: 40px 0px 40px 0;
+	margin: 2.5vw 0px  2.5vw 0;
 }
 .ReactSwipeButton,
 .ReactSwipeButton * {
@@ -16,15 +16,15 @@
                                     not supported by any browser */
 }
 .rsbContainer {
-	border: 2px solid white;
+	border: 0.125vw solid white;
 	float: left;
 	width: 100%;
 	height: 100%;
 	background: #eee;
-	border-radius: 17px;
+	border-radius: 11.0625vw;
 	position: relative;
 	overflow: hidden;
-	border: 0.25px solid #6c89aa;
+	border: 0.0156vw solid #6c89aa;
 }
 .rsbContainerUnlocked {
 	width: 100% !important;
@@ -45,7 +45,7 @@ rsbcSliderCircle {
 .rsbcSlider {
 	display: flex;
 	flex-direction: row;
-	margin: 2px;
+	margin: 0.125vw;
 	text-align: right;
 	align-items: center;
 	justify-content: flex-end;
@@ -53,17 +53,16 @@ rsbcSliderCircle {
 	height: 90%;
 	position: absolute;
 	top: 0;
-	left: 50px;
+	left: 3.125vw;
 	margin-left: -60%;
 	background: #333;
-	border-radius: 17px;
+	border-radius: 1.0625vw;
 	z-index: 100;
-	/* box-shadow: 1px 1px 5px rgba(0,0,0,0.3); */
 	cursor: pointer;
 	background: #14243b;
-	letter-spacing: 2px;
+	letter-spacing: 0.125vw;
 	color: #fff;
-	font-size: 13px;
+	font-size: 0.8125vw;
 }
 .rsbcSlider > div {
 	display: flex;
@@ -74,11 +73,11 @@ rsbcSliderCircle {
 }
 
 .rsbcSlider > div > span {
-	margin-right: 20px;
+	margin-right: 1.25vw;
 	color: #f1962c;
 }
 .rsbcSlider > div > div {
-	margin: 0 20px 0 20px;
+	margin: 0 1.25vw 0 1.25vw;
 }
 .rsbcSliderUnlocked {
 	margin-left: -53%;
@@ -93,11 +92,11 @@ rsbcSliderCircle {
 
 /* SLIDER INPUT SECTION =========================== */
 .sliderInputText {
-	font-size: 13px;
+	font-size: 0.8125vw;
 	color: #14243b;
 	height: 100%;
 	background-color: #f4f6ff;
-	border: 0.25px solid #6c89aa;
+	border: 0.0156vw solid #6c89aa;
 }
 .sliderInputText > form {
 	width: 100%;
