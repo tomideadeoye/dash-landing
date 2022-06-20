@@ -214,6 +214,8 @@ body {
 	height: 7.5vw;
 	width: 8.3077vw;
 	border-radius: 1.875vw;
+	/* align-self: center; */
+	justify-self: center;
 }
 
 .iconBox > img {
@@ -240,6 +242,27 @@ body {
 	font-weight: 300;
 	font-size: 1.5625vw;
 	line-height: 1.875vw;
+}
+
+@media screen and (max-width: 600px) {
+	.featureTextBox {
+		width: 70%;
+		height: 7.4375vw;
+		margin-left: 1.25vw;
+		text-align: justify;
+	}
+	.featureTextBox h1 {
+		font-size: 4.1vw;
+	}
+	.featureTextBox p {
+		font-style: normal;
+		font-weight: 300;
+		font-size: 3.1vw;
+	}
+	.iconBox {
+		height: 12vw;
+		width: 12vw;
+	}
 }
 
 /* FEATURES SECTION ENDS =====================================================================================*/

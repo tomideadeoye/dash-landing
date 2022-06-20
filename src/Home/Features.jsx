@@ -47,15 +47,20 @@ export default function Features() {
 	return (
 		<div className={styles.features}>
 			<h1 className={styles.featureTitle}>What you get</h1>
-			<Grid container rowSpacing={4} columnSpacing={{ xs: 4, sm: 4, md: 3 }}>
+			<Grid
+				container
+				rowSpacing={{ xs: 4, sm: 6, md: 9 }}
+				columnSpacing={{ xs: 4, sm: 4, md: 3 }}
+			>
 				{/* loop through the featureData object and render a Feature component for each key/value pair  */}
 				{Object.keys(featureData).map((key) => {
 					return (
 						<Grid
 							item
 							lg={6}
-							sm={6}
 							md={6}
+							sm={12}
+							xs={12}
 							className={styles.featureBox}
 							key={key}
 						>
