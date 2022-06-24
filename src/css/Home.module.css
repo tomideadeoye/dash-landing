@@ -5,11 +5,10 @@
 	margin: 0;
 	padding: 0;
 	color: #f4f6ff;
-	font-size: 16px;
 }
 
 html {
-	font-size: 16px;
+	font-size: 1vw;
 }
 
 body {
@@ -536,8 +535,23 @@ body {
 .footerContainer {
 	width: 100%;
 	padding: 2vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
-
+.footerContainer > hr {
+	background-color: #f4f6ff;
+	width: 100%;
+	margin: 2vw 0;
+}
+.helpDocuments {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 1vw 0;
+}
 .footerNav {
 	display: flex;
 	flex-direction: row;
@@ -548,11 +562,64 @@ body {
 	margin: 0 2vw;
 }
 
+.helpDocuments > img {
+	width: 6vw;
+}
+
+.downloadBox {
+	border: 0.5vw solid #fff;
+	border-radius: 3vw;
+	width: 60vw;
+	margin: -10vw 0 1vw 0;
+	background: #14243b;
+	padding: 2vw;
+}
+
+.downloadBox > * {
+	font-size: 2vw;
+}
+
+.downloadIconBox {
+	flex-direction: column;
+	width: 11vw;
+	height: 3vw;
+	background-color: #fff;
+	border-radius: 0.4vw;
+	margin: 2vw;
+	padding: 2vw;
+}
+
+.downloadLogo {
+	height: 3.75vw;
+	margin: 0vw 2vw;
+}
+
+.downloadIconBox > img {
+	width: 90vw;
+}
+
+.downloadIconBox > * {
+	color: #14243b;
+	font-size: 0.8vw;
+	font-weight: 300;
+}
+
+/* .downloadIconBox > p {
+	color:  #14243b;
+	font-size: 0.8vw;
+} */
+
+.storeDetails > * {
+	color: #14243b;
+	fill: #14243b;
+}
+
 .copyright {
-	margin: 4vw 0;
 	display: flex;
 	flex-direction: row;
+	margin: 4vw 0;
 	justify-content: space-between;
+	width: 100%;
 }
 .copyright > p {
 	font-size: 1vw;

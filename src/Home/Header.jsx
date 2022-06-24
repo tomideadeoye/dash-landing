@@ -43,7 +43,6 @@ export default function Header() {
 				<img className={styles.logo} alt="" src="group-1.svg" />
 				<nav className={styles.navItems}>
 					{navItems.map((item) => {
-						console.log(item);
 						return (
 							// <Link to={item.link}>
 							<li
