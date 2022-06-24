@@ -29,7 +29,7 @@ export default function FeaturesRatings() {
 	};
 
 	return (
-		<div className={styles.sendMoney}>
+		<div className={styles.featuresRatings}>
 			<div className={styles.sendMoneyBox}>
 				<div className={styles.textsBox}>
 					<h1>Features and Rating</h1>

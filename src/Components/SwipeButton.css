@@ -3,85 +3,28 @@
 	height: 3.125vw;
 	position: relative;
 	margin: 2.5vw 0px 2.5vw 0;
+	padding: 0.2vw;
 	display: flex;
 	flex-direction: row;
-	border-radius: 11.0625vw;
+	border-radius: 0.5vw;
 	overflow: hidden;
-	background-color: #fff;
+	background-color: #f4f6ff;
 	align-items: center;
+	border: 0.0156vw solid #6c89aa;
 }
 
 .swipeButton {
 	background-color: #14243b;
-	/* border: 0.125vw solid  #fff; */
 	width: 50%;
-	height: 95%;
-	border-radius: 11.0625vw;
+	height: 100%;
+	border-radius: 0.5vw;
 	position: relative;
 	overflow: hidden;
 }
-.swipeButtonUnlocked {
-	width: 100% !important;
-	margin-left: 15%;
-	transition: 0.5s;
-}
-.swipeButtonUnlocked .rsbcSlider {
-	/* left: 100% !important; */
-	cursor: default;
-	width: 100% !important;
-	pointer-events: none;
-}
+
 .swipeButtonUnlocked .rsbcSliderArrow,
 rsbcSliderCircle {
 	transition: 0.5s;
-}
-
-.rsbcSlider {
-	display: flex;
-	flex-direction: row;
-	margin: 0.125vw;
-	text-align: right;
-	align-items: center;
-	justify-content: flex-end;
-	width: 100%;
-	height: 90%;
-	position: absolute;
-	top: 0;
-	left: 3.125vw;
-	margin-left: -60%;
-	background: #333;
-	border-radius: 1.0625vw;
-	z-index: 100;
-	cursor: pointer;
-	background: #14243b;
-	letter-spacing: 0.125vw;
-	color: #fff;
-	font-size: 0.8125vw;
-}
-.rsbcSlider > div {
-	display: flex;
-	flex-direction: row;
-	text-align: right;
-	align-items: center;
-	justify-content: flex-end;
-}
-
-.rsbcSlider > div > span {
-	margin-right: 1.25vw;
-	color: #f1962c;
-}
-.rsbcSlider > div > div {
-	margin: 0 1.25vw 0 1.25vw;
-}
-.rsbcSliderUnlocked {
-	margin-left: -53%;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-}
-.rsbcSliderUnlocked > span {
-	color: #f1962c;
 }
 
 /* SLIDER INPUT SECTION =========================== */
@@ -91,11 +34,11 @@ rsbcSliderCircle {
 	width: 50%;
 	height: 100%;
 	background-color: #f4f6ff;
-	/* border: 0.0156vw solid #6c89aa; */
 }
 .sliderInputText > form {
 	width: 100%;
 	height: 100%;
+	background: #f4f6ff;
 }
 .sliderInputText > form > input {
 	padding: 0.3vw;
@@ -103,14 +46,39 @@ rsbcSliderCircle {
 	height: 100%;
 	color: #14243b;
 	border: none;
+	padding-left: 1vw;
 }
 .sliderInputText > form > input:focus {
 	outline: none !important;
 }
+.sliderInputText > form > input::placeholder {
+	font-size: 1vw;
+}
+
 /* SLIDER INPUT SECTION ENDS =========================== */
+
+.materialArrowIcon {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
 
 .materialArrowIcon > * {
 	margin: 0 0.25vw;
 	width: 2vw;
 	fill: #f1962c;
+	animation: MoveLeftRight 1s linear infinite;
+	position: absolute;
+	right: 1vw;
+}
+
+@keyframes MoveLeftRight {
+	0%,
+	100% {
+		right: 0;
+	}
+	50% {
+		right: 1vw;
+	}
 }

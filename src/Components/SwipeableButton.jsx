@@ -27,7 +27,6 @@ export default function SwipeableButton() {
 		// }
 	};
 	const ondragend = () => {
-		console.log("Sned details to server");
 		// if (this.unmounted || this.state.unlocked) return;
 		// console.log(this.props.onSuccess(this.props.id));
 		// if (this.isDragging) {

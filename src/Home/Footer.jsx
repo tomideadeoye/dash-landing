@@ -3,6 +3,7 @@ import React from "react";
 import styles from "../css/Home.module.css";
 import { navItems } from "./Header";
 import AppleIcon from "@mui/icons-material/Apple";
+import ShopIcon from "@mui/icons-material/Shop";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -56,7 +57,7 @@ export default function Footer() {
 						<Box sx={colBoxStyling} className={styles.downloadIconBox}>
 							<p>download from</p>
 							<Box sx={rowBoxStyling} className={styles.storeDetails}>
-								<AppleIcon /> <p>Play Store</p>
+								<ShopIcon /> <p>Play Store</p>
 							</Box>
 						</Box>
 					</Link>

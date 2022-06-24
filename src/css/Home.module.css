@@ -476,12 +476,17 @@ body {
 	color: #fff !important;
 }
 
-/* FEATURES AND RATINGS  */
+/* FEATURES AND RATINGS ========================== */
+
+.featuresRatings {
+	width: 100%;
+	height: 60vw;
+	background: #ffffff;
+}
+
 .ratingBox {
 	display: flex;
 	width: 33.3125vw;
-	height: 140px;
-	background: #ffffff;
 	border: 0.02vw solid #755df5;
 	box-shadow: 8px 8px 12px 4px rgba(24, 4, 129, 0.13);
 	border-radius: 1.875vw;
@@ -534,7 +539,7 @@ body {
 
 .footerContainer {
 	width: 100%;
-	padding: 2vw;
+	padding: 3vw;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -612,6 +617,7 @@ body {
 .storeDetails > * {
 	color: #14243b;
 	fill: #14243b;
+	margin: 0 0.2vw;
 }
 
 .copyright {
