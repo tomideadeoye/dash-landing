@@ -75,7 +75,7 @@ body {
 }
 
 .navItem {
-	font-size: 1.4vw;
+	font-size: 1.2vw;
 	list-style: none;
 	margin: 0 1.3125vw 0 1.3125vw;
 	cursor: pointer;
@@ -613,6 +613,10 @@ body {
 	color:  #14243b;
 	font-size: 0.8vw;
 } */
+
+.socialIcons > * {
+	margin: 0 1vw;
+}
 
 .storeDetails > * {
 	color: #14243b;

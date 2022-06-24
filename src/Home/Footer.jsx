@@ -5,9 +5,20 @@ import { navItems } from "./Header";
 import AppleIcon from "@mui/icons-material/Apple";
 import ShopIcon from "@mui/icons-material/Shop";
 import { Link } from "react-router-dom";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from '@mui/icons-material/Twitter';
+import YouTubeIcon from "@mui/icons-material/YouTube";
 
 export default function Footer() {
-	const icons = [];
+	const iconsArray = [
+		<LinkedInIcon />,
+		<InstagramIcon />,
+		<FacebookIcon />,
+		<TwitterIcon />,
+		<YouTubeIcon />
+	];
 
 	const content = {
 		receiveMoney: {
@@ -79,7 +90,14 @@ export default function Footer() {
 					width: "100%",
 				}}
 			>
-				<div>shrkfjbnlk</div>
+
+				{/* SOCIAL ICONS LOGIC */}
+				<div className={styles.socialIcons}>
+					{iconsArray.map((item) => {
+						console.log(item);
+						return item;
+					})}
+				</div>
 				<nav className={styles.footerNav}>
 					{navItems.map((item) => {
 						return <li id={item.id}>{item.id}</li>;
