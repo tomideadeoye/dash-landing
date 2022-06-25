@@ -285,8 +285,7 @@ body {
 	align-items: center;
 	height: 7.5vw;
 	width: 8.3077vw;
-	border-radius: 1.875vw;
-	/* align-self: center; */
+	border-radius: 30%;
 	justify-self: center;
 }
 
@@ -295,11 +294,14 @@ body {
 }
 
 .featureTextBox {
-	display: block;
+	display: flex;
+	flex-direction: column;
 	width: 26.5625vw;
 	height: 7.4375vw;
 	margin-left: 1.25vw;
 	text-align: justify;
+	align-items: left;
+	justify-content: center;
 }
 .featureTextBox h1 {
 	font-size: 1.875vw;
@@ -320,16 +322,16 @@ body {
 	.featureTextBox {
 		width: 70%;
 		height: 7.4375vw;
-		margin-left: 1.25vw;
+		margin-left: 4vw;
 		text-align: justify;
 	}
 	.featureTextBox h1 {
-		font-size: 4.1vw;
+		font-size: 3.5vw;
 	}
 	.featureTextBox p {
 		font-style: normal;
 		font-weight: 300;
-		font-size: 3.1vw;
+		font-size: 2.5vw;
 	}
 	.iconBox {
 		height: 12vw;
@@ -613,9 +615,17 @@ body {
 	color:  #14243b;
 	font-size: 0.8vw;
 } */
-
+.socialIcons {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
 .socialIcons > * {
 	margin: 0 1vw;
+	border-radius: 100%;
+	border: 0.1vw solid white;
+	padding: 0.2vw;
 }
 
 .storeDetails > * {

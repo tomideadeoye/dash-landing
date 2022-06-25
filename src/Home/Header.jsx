@@ -40,27 +40,30 @@ export default function Header() {
 	return (
 		<div className={styles.headerSection}>
 			<div className={styles.navBox}>
-				<img className={styles.logo} alt="" src="group-1.svg" />
+				{/* LOGO */}
+				<Link to="/home">
+					<img className={styles.logo} alt="" src="dashlogo.svg" />
+				</Link>
+				{/* MAPS NAVITEMS FROM navItems */}
 				<nav className={styles.navItems}>
 					{navItems.map((item) => {
 						return (
-							// <Link to={item.link}>
 							<li
 								className={styles.navItem}
 								id={item.id}
 								onMouseEnter={(e) => onMouseEnter(e)}
 								onMouseLeave={(e) => onMouseLeave(e)}
 							>
-								{item.id}
+								<Link to={item.link}>{item.id} </Link>
 							</li>
-							// </Link>
 						);
 					})}
 				</nav>
 				<div className={styles.lineDivider} />
+
 				<LanguageIcon
 					className={styles.globeIcon}
-					id="language"
+					id="Language"
 					onMouseEnter={(e) => onMouseEnter(e)}
 					onMouseLeave={(e) => onMouseLeave(e)}
 				/>
@@ -73,8 +76,8 @@ export default function Header() {
 					Download
 				</Button>
 			</div>
-			{popUpOpen.language && <LanguagePopUp />}
-			{popUpOpen.product && <ProductPopUp />}
+			{popUpOpen.Language && <LanguagePopUp />}
+			{popUpOpen.Product && <ProductPopUp />}
 		</div>
 	);
 }

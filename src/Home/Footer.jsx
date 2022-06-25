@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from '@mui/icons-material/Twitter';
+import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
 export default function Footer() {
@@ -17,7 +17,7 @@ export default function Footer() {
 		<InstagramIcon />,
 		<FacebookIcon />,
 		<TwitterIcon />,
-		<YouTubeIcon />
+		<YouTubeIcon />,
 	];
 
 	const content = {
@@ -90,14 +90,17 @@ export default function Footer() {
 					width: "100%",
 				}}
 			>
-
-				{/* SOCIAL ICONS LOGIC */}
-				<div className={styles.socialIcons}>
+				{/* SOCIAL ICONS LOGIC MAPS THROUGH ICON ARRAY */}
+				<Box sx={rowBoxStyling}>
 					{iconsArray.map((item) => {
 						console.log(item);
-						return item;
+						return (
+							<Link to="/something" className={styles.socialIcons}>
+								{item}
+							</Link>
+						);
 					})}
-				</div>
+				</Box>
 				<nav className={styles.footerNav}>
 					{navItems.map((item) => {
 						return <li id={item.id}>{item.id}</li>;
