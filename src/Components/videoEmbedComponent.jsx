@@ -19,8 +19,7 @@ const VideoResponsive = styled.div`
 		border-radius: 3.125vw;
 	}
 `;
-
-const YoutubeEmbed = ({ source }) => {
+export default function VideoEmbedComponent({ source }) {
 	const [play, setPlay] = useState(false);
 
 	return (
@@ -46,6 +45,4 @@ const YoutubeEmbed = ({ source }) => {
 			)}
 		</>
 	);
-};
-
-export default YoutubeEmbed;
+}

@@ -5,10 +5,6 @@ import SwipeableButton from "../Components/SwipeableButton";
 import styles from "../css/Home.module.css";
 
 export default function HeroSection() {
-	const onSuccess = () => {
-		console.log("Yay! Swipe Success");
-	};
-
 	return (
 		<div className={styles.heroSection}>
 			<Box
@@ -19,7 +15,7 @@ export default function HeroSection() {
 				<div className={styles.heroSectionTexts}>
 					<p className={styles.heroTitle}>pay & be paid</p>
 					<p className={styles.heroCash}>
-						cash <p className={styles.heroTitle}>with</p>
+						cash <span className={styles.heroTitle}>with</span>
 					</p>
 					<img className={styles.heroSectionLogo} alt="" src="group-1.svg" />
 					<div className={styles.heroText}>Just Slide to “dash” anyone</div>
@@ -29,7 +25,6 @@ export default function HeroSection() {
 					<Box className={styles.platformIcon}>
 						<SwipeableButton
 							key="1"
-							onSuccess={onSuccess}
 							color="#14243b"
 							text="Enter your phone number"
 						/>

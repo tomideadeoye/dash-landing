@@ -92,18 +92,21 @@ export default function Footer() {
 			>
 				{/* SOCIAL ICONS LOGIC MAPS THROUGH ICON ARRAY */}
 				<Box sx={rowBoxStyling}>
-					{iconsArray.map((item) => {
-						console.log(item);
+					{iconsArray.map((item, key) => {
 						return (
-							<Link to="/something" className={styles.socialIcons}>
+							<Link key={key} to="/something" className={styles.socialIcons}>
 								{item}
 							</Link>
 						);
 					})}
 				</Box>
 				<nav className={styles.footerNav}>
-					{navItems.map((item) => {
-						return <li id={item.id}>{item.id}</li>;
+					{navItems.map((item, key) => {
+						return (
+							<li key={key} id={item.id}>
+								{item.id}
+							</li>
+						);
 					})}
 				</nav>
 			</Box>

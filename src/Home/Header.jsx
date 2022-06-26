@@ -1,42 +1,128 @@
 import { Box, Button } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "../css/Home.module.css";
 import LanguageIcon from "@mui/icons-material/Language";
 import { Link } from "react-router-dom";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import Grow from "@mui/material/Grow";
+import Paper from "@mui/material/Paper";
+import Popper from "@mui/material/Popper";
+import MenuList from "@mui/material/MenuList";
+import Stack from "@mui/material/Stack";
 
 export const navItems = [
 	{
 		id: "Product",
 		link: "/products",
+		popup: ProductPopUp,
 	},
 	{
 		id: "Careers",
 		link: "/products",
+		popup: ProductPopUp,
 	},
 	{
 		id: "Blog",
 		link: "/products",
+		popup: ProductPopUp,
 	},
 	{
 		id: "Help",
 		link: "/Help",
+		popup: ProductPopUp,
 	},
 ];
 
-export default function Header() {
-	const [popUpOpen, setPopUpOpen] = useState({
-		Language: false,
-		Product: false,
-	});
-	const onMouseEnter = (e) => {
-		let value = e.target.id;
-		setPopUpOpen((prevPopUpOpen) => ({ ...prevPopUpOpen, [value]: true }));
-	};
-	const onMouseLeave = (e) => {
-		let value = e.target.id;
-		setPopUpOpen((prevPopUpOpen) => ({ ...prevPopUpOpen, [value]: false }));
+function MUINav({ item, popup }) {
+	const [open, setOpen] = useState(false);
+	const anchorRef = useRef(null);
+
+	const handleToggle = () => {
+		setOpen((prevOpen) => !prevOpen);
 	};
 
+	const handleClose = (event) => {
+		if (anchorRef.current && anchorRef.current.contains(event.target)) {
+			return;
+		}
+
+		setOpen(false);
+	};
+
+	function handleListKeyDown(event) {
+		if (event.key === "Tab") {
+			event.preventDefault();
+			setOpen(false);
+		} else if (event.key === "Escape") {
+			setOpen(false);
+		}
+	}
+
+	// return focus to the button when we transitioned from !open -> open
+	const prevOpen = useRef(open);
+
+	useEffect(() => {
+		if (prevOpen.current === true && open === false) {
+			anchorRef.current.focus();
+		}
+
+		prevOpen.current = open;
+	}, [open]);
+
+	return (
+		<Stack direction="row" spacing={2}>
+			<div>
+				<Button
+					ref={anchorRef}
+					id="composition-button"
+					aria-controls={open ? "composition-menu" : undefined}
+					aria-expanded={open ? "true" : undefined}
+					aria-haspopup="true"
+					onClick={handleToggle}
+					className={styles.navItem}
+				>
+					{item}
+				</Button>
+				<Popper
+					open={open}
+					anchorEl={anchorRef.current}
+					role={undefined}
+					placement="bottom-start"
+					transition
+					disablePortal
+				>
+					{({ TransitionProps, placement }) => (
+						<Grow
+							// style={{ background: "blue" }}
+							{...TransitionProps}
+							style={{
+								background: "none",
+								marginTop: "1vw",
+								transformOrigin:
+									placement === "bottom-start" ? "left top" : "left bottom",
+							}}
+						>
+							<Paper>
+								<ClickAwayListener onClickAway={handleClose}>
+									<MenuList
+										autoFocusItem={open}
+										id="composition-menu"
+										aria-labelledby="composition-button"
+										onKeyDown={handleListKeyDown}
+									>
+										{popup()}
+									</MenuList>
+								</ClickAwayListener>
+							</Paper>
+						</Grow>
+					)}
+				</Popper>
+			</div>
+		</Stack>
+	);
+}
+
+export default function Header() {
 	return (
 		<div className={styles.headerSection}>
 			<div className={styles.navBox}>
@@ -46,27 +132,23 @@ export default function Header() {
 				</Link>
 				{/* MAPS NAVITEMS FROM navItems */}
 				<nav className={styles.navItems}>
-					{navItems.map((item) => {
-						return (
-							<li
-								className={styles.navItem}
-								id={item.id}
-								onMouseEnter={(e) => onMouseEnter(e)}
-								onMouseLeave={(e) => onMouseLeave(e)}
-							>
-								<Link to={item.link}>{item.id} </Link>
-							</li>
-						);
+					{navItems.map((item, key) => {
+						return <MUINav key={key} item={item.id} popup={item.popup} />;
 					})}
 				</nav>
 				<div className={styles.lineDivider} />
-
-				<LanguageIcon
-					className={styles.globeIcon}
-					id="Language"
-					onMouseEnter={(e) => onMouseEnter(e)}
-					onMouseLeave={(e) => onMouseLeave(e)}
+				<MUINav
+					item={
+						<LanguageIcon
+							className={styles.globeIcon}
+							id="Language"
+							// onMouseEnter={(e) => onMouseEnter(e)}
+							// onMouseLeave={(e) => onMouseLeave(e)}
+						/>
+					}
+					popup={LanguagePopUp}
 				/>
+
 				<Button
 					className={styles.button}
 					sx={{ width: 152 }}
@@ -76,15 +158,13 @@ export default function Header() {
 					Download
 				</Button>
 			</div>
-			{popUpOpen.Language && <LanguagePopUp />}
-			{popUpOpen.Product && <ProductPopUp />}
 		</div>
 	);
 }
 
 function LanguagePopUp() {
 	return (
-		<div className={styles.containerCover} style={{ right: "9vw" }}>
+		<div className={styles.containerCover}>
 			<div className={styles.popUpContainer}>
 				<div className={styles.popUpContainerItem}>
 					<span>
@@ -169,6 +249,7 @@ function ProductPopUp() {
 			{Object.keys(content).map((key, value) => {
 				return (
 					<Box
+						key={key}
 						sx={{ display: "flex", flexDirection: "column" }}
 						className={styles.popUpContainer}
 					>

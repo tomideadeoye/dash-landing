@@ -1,6 +1,6 @@
 import React from "react";
 import SwipeableButton from "../Components/SwipeableButton";
-import YoutubeEmbed from "../Components/videoEmbedComponent";
+import VideoEmbedComponent from "../Components/VideoEmbedComponent";
 import styles from "../css/Home.module.css";
 
 export default function DashMarketPlace() {
@@ -50,7 +50,7 @@ export default function DashMarketPlace() {
 				</div>
 
 				<div className={styles.onboardingVideoContainer}>
-					<YoutubeEmbed source="https://www.youtube.com/embed/R8VBRCs2jTU" />
+					<VideoEmbedComponent source="testvideo.mp4" />
 				</div>
 			</div>
 		</>

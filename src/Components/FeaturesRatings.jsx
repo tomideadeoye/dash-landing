@@ -34,9 +34,10 @@ export default function FeaturesRatings() {
 				<div className={styles.textsBox}>
 					<h1>Features and Rating</h1>
 					{/* loop through the featureData object and render a Feature component for each key/value pair  */}
-					{content["Features and Ratings"].map((item) => {
+					{content["Features and Ratings"].map((item, key) => {
 						return (
 							<div
+								key={key}
 								className={styles.ratingBox}
 								style={{
 									left: item.offset,
