@@ -98,6 +98,18 @@
 	font-size: 1vw;
 }
 
+/* Chrome, Safari, Edge, Opera */
+.sliderInputText > input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+.sliderInputText > input[type="number"] {
+	-moz-appearance: textfield;
+}
+
 /* SLIDER INPUT SECTION ENDS =========================== */
 
 .materialArrowIcon {

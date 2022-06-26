@@ -55,7 +55,7 @@ export default function SwipeableButton() {
 			{!posted && (
 				<form className="sliderInputText">
 					<input
-						type="text"
+						type="number"
 						value={inputValue}
 						placeholder="Enter your phone number"
 						onChange={onChange}
