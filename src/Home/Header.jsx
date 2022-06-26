@@ -125,12 +125,13 @@ function MUINav({ item, popup }) {
 export default function Header() {
 	return (
 		<div className={styles.headerSection}>
+			{/* LOGO */}
+			<Link to="/">
+				<img className={styles.logo} alt="" src="dashlogo.svg" />
+			</Link>
+
+			{/* MAPS NAVITEMS FROM navItems */}
 			<div className={styles.navBox}>
-				{/* LOGO */}
-				<Link to="/">
-					<img className={styles.logo} alt="" src="dashlogo.svg" />
-				</Link>
-				{/* MAPS NAVITEMS FROM navItems */}
 				<nav className={styles.navItems}>
 					{navItems.map((item, key) => {
 						return <MUINav key={key} item={item.id} popup={item.popup} />;

@@ -37,50 +37,51 @@ body {
 /* HEADER NAV SECTION==================================================================================== */
 
 .headerSection {
-	justify-content: center;
+	display: flex;
+	flex-direction: row;
 	align-items: center;
 	margin-bottom: 4.375vw;
-	margin-top: 4.375vw;
-	width: 100%;
-	padding: 0rem 5.6875vw !important;
+	margin-top: 14.375vw;
+	width: 90%;
+	/* padding: 0rem 5.6875vw !important; */
+	/* padding: 0.625vw; */
+	border-radius: 1.25vw;
+	background-color: #14243b;
+	height: 6.125vw;
+	border: 1px solid #6c89aa;
+	/* width: 100%; */
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 4px 15px 2.5px rgba(2, 8, 16, 0.65);
+	margin: 2vw;
 }
 
 .navBox {
-	padding: 0.625vw;
 	display: flex;
-	flex-direction: row;
-	border-radius: 1.25vw;
-	background-color: #14243b;
-	border: 1px solid #6c89aa;
-	box-sizing: border-box;
-	box-shadow: 0 4px 15px 2.5px rgba(2, 8, 16, 0.65);
-	width: 100%;
-	height: 6.125vw;
-	justify-content: space-between;
 	align-items: center;
+	justify-content: space-around;
 }
 
 .logo {
-	width: 10vw;
-	margin-left: 1.25vw;
-	margin-right: 0.2vw;
+	width: 8vw;
+	margin-left: 3vw;
 }
 
 .navItems {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	/* width: 20.6875rem; */
-	/* height: 1.5rem; */
 }
 
 .navItem {
 	font-size: 1.2vw;
+	font-weight: bold;
 	list-style: none;
 	margin: 0 1.3125vw 0 1.3125vw;
 	cursor: pointer;
 	padding: 0.5rem 0;
 	color: #fff;
+	text-transform: capitalize;
 }
 
 .navItem:hover {
@@ -110,14 +111,15 @@ body {
 	height: 3.6875vw;
 }
 .button {
+	width: 10vw;
+	height: 3.6056vw;
 	padding: 0.3125vw;
 	border: 0.0625vw solid #fff;
 	border-radius: 1.0625vw;
-	height: 3.6056vw;
-	width: 15%;
 	font-size: 1vw;
 	color: #f1962c;
 	font-weight: bold;
+	margin: 3vw;
 }
 
 .containerCover {
