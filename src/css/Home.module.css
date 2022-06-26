@@ -611,10 +611,6 @@ body {
 	font-weight: 300;
 }
 
-/* .downloadIconBox > p {
-	color:  #14243b;
-	font-size: 0.8vw;
-} */
 .socialIcons {
 	display: flex;
 	flex-direction: row;

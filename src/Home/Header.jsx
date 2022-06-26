@@ -41,7 +41,7 @@ export default function Header() {
 		<div className={styles.headerSection}>
 			<div className={styles.navBox}>
 				{/* LOGO */}
-				<Link to="/home">
+				<Link to="/">
 					<img className={styles.logo} alt="" src="dashlogo.svg" />
 				</Link>
 				{/* MAPS NAVITEMS FROM navItems */}
