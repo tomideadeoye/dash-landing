@@ -57,9 +57,11 @@ body {
 }
 
 .navBox {
+	/* width: 60%; */
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
+	height: 100%;
 }
 
 .logo {
@@ -70,16 +72,21 @@ body {
 .navItems {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-around;
+
+	width: 100%;
 }
 
 .navItem {
+	width: fit-content;
+	height: fit-content;
+	display: flex;
 	font-size: 1.2vw;
 	font-weight: bold;
 	list-style: none;
-	margin: 0 1.3125vw 0 1.3125vw;
+	margin: 0 2.3125vw 0 1.3125vw;
+	padding: 0.5vw 0;
 	cursor: pointer;
-	padding: 0.5rem 0;
 	color: #fff;
 	text-transform: capitalize;
 }
@@ -91,35 +98,6 @@ body {
 .icon {
 	width: 2.125vw;
 	height: 2.125vw;
-}
-
-.globeIcon {
-	font-size: 3.225vw;
-	padding: 0.4vw;
-}
-
-.globeIcon2 {
-	font-size: 3.225vw;
-	padding: 0.4vw;
-	margin-right: 0.2vw;
-	fill: #f1962c;
-}
-
-.lineDivider {
-	border-right: 0.0625vw solid #f4f6ff;
-	width: 1vw;
-	height: 3.6875vw;
-}
-.button {
-	width: 10vw;
-	height: 3.6056vw;
-	padding: 0.3125vw;
-	border: 0.0625vw solid #fff;
-	border-radius: 1.0625vw;
-	font-size: 1vw;
-	color: #f1962c;
-	font-weight: bold;
-	margin: 3vw;
 }
 
 .containerCover {
@@ -218,30 +196,10 @@ body {
 	align-self: center;
 }
 
-.platformIcon {
-	margin: 1.25vw;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 31.25vw;
-	align-items: center;
-}
-
-.platformIcon p {
-	margin-left: 1.25vw;
-}
 .heroText {
 	font-weight: 400;
 	font-size: 2.1875vw;
 	margin-top: 1.5625vw;
-}
-
-.platformIcon img {
-	position: relative;
-	top: 0.3125vw;
-	width: 1.25vw;
-	height: 1.25vw;
-	margin-left: 0.625vw;
 }
 
 /* HERO SECTION ENDS =======================================================================================*/

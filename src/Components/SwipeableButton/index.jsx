@@ -2,11 +2,23 @@ import React, { useState } from "react";
 import "./SwipeButton.css";
 import ArrowForwardSharpIcon from "@mui/icons-material/ArrowForwardSharp";
 import { useSwipeable } from "react-swipeable";
+import { InputAdornment, TextField } from "@mui/material";
+import validator from "validator";
 
 export default function SwipeableButton() {
 	const [inputValue, setInputValue] = useState("");
 	const [posted, setPosted] = useState(false);
 	const [swiping, setSwiping] = useState(false);
+	const [mobile, setmobile] = useState("");
+	const [isError, setIsError] = useState(false);
+
+	const phoneValidator = (phone) => {
+		const regex = /^\d{10}$/;
+		console.log(regex.test(phone));
+	};
+
+
+	validator.isMobilePhone(mobile, "en-US");
 
 	const onChange = (e) => {
 		setInputValue(e.target.value);
@@ -27,6 +39,7 @@ export default function SwipeableButton() {
 		preventDefaultTouchmoveEvent: true,
 		trackMouse: true,
 	});
+	phoneValidator(mobile);
 
 	return (
 		<div className="SwipeButtonContainer">
@@ -54,12 +67,29 @@ export default function SwipeableButton() {
 
 			{!posted && (
 				<form className="sliderInputText">
-					<input
+					<TextField
+						type="tel"
+						error={isError}
+						value={mobile}
+						label="Enter Phone Number"
+						onChange={(e) => {
+							setmobile(e.target.value);
+							if (e.target.value.length > 10 || mobile.includes("-")) {
+								setIsError(true);
+							}
+						}}
+						InputProps={{
+							startAdornment: (
+								<InputAdornment position="start">+234</InputAdornment>
+							),
+						}}
+					/>
+					{/* <input
 						type="number"
 						value={inputValue}
 						placeholder="Enter your phone number"
 						onChange={onChange}
-					/>
+					/> */}
 				</form>
 			)}
 		</div>

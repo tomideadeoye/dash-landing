@@ -1,10 +1,40 @@
 import { Box } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import SwipeableButton from "../Components/SwipeableButton";
 
 // STYLES
 import styles from "../css/Home.module.css";
 
+const useStyles = makeStyles((theme) => ({
+	centerHorizontally: {
+		display: "flex",
+		flexDirection: "row",
+		justifyContent: "center",
+		alignItems: "center",
+	},
+	platformIcon: {
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "center",
+		width: "31.25vw",
+		alignItems: "center",
+	},
+	iconDetailBox: {
+		display: "flex",
+		flexDirection: "row",
+		"& > div": {
+			margin: "0 1.4vw",
+		},
+		"& img": {
+			width: "1.5vw",
+			margin: "0 1vw 0 0vw",
+		},
+		"& p": { fontWeight: "light" },
+	},
+}));
+
 export default function HeroSection() {
+	const classes = useStyles();
 	return (
 		<div className={styles.heroSection}>
 			<Box
@@ -22,27 +52,17 @@ export default function HeroSection() {
 
 					{/* SLIDE TO DASH BUTTON ON THE HERO SECTION */}
 
-					<Box className={styles.platformIcon}>
-						<SwipeableButton
-							key="1"
-							color="#14243b"
-							text="Enter your phone number"
-						/>
-
-						<Box
-							sx={{
-								display: "flex",
-								flexDirection: "row",
-							}}
-						>
-							<p>
-								Google Play
-								<img alt="" src="vector.svg" />
-							</p>
-							<p>
-								App Store
+					<Box className={classes.platformIcon}>
+						<SwipeableButton color="#14243b" text="Enter your phone number" />
+						<Box className={classes.iconDetailBox}>
+							<Box className={classes.centerHorizontally}>
 								<img alt="" src="vector1.svg" />
-							</p>
+								<p>App Store</p>
+							</Box>
+							<Box className={classes.centerHorizontally}>
+								<img alt="" src="vector.svg" />
+								<p>Google Play</p>
+							</Box>
 						</Box>
 					</Box>
 

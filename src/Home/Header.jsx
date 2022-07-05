@@ -1,4 +1,5 @@
 import { Box, Button } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "../css/Home.module.css";
 import LanguageIcon from "@mui/icons-material/Language";
@@ -33,7 +34,84 @@ export const navItems = [
 	},
 ];
 
-function MUINav({ item, popup }) {
+
+// STYLES FOR HEADER COMPONENT
+const useStyles = makeStyles((theme) => ({
+	// mainContainer: {
+	// 	[theme.breakpoints.down("sm")]: {
+	// 		padding: "0 1rem",
+	// 	},
+	// },
+	downloadLanguageContainer: {
+		margin: "0 3vw 0 3vw",
+		display: "flex",
+		flexDirection: "row",
+		justifyContent: "space-between",
+		alignItems: "center",
+		"& > div": { margin: "0 0.2vw" },
+	},
+	globeIcon: {
+		fontSize: "3.225vw",
+		padding: "0.4vw",
+	},
+	popUpGlobeIcon: {
+		fontSize: "2.8vw",
+		padding: "0.4vw",
+		marginRight: "0.2vw",
+		fill: "#f1962c",
+	},
+	headerDownloadButton: {
+		width: " fit-content",
+		height: " fit-content",
+		padding: " 0.8vw 3.3vw",
+		border: " 0.0625vw solid #fff",
+		borderRadius: " 1.0625vw",
+		fontSize: " 1.2vw",
+		color: " #f1962c",
+		fontWeight: " bold",
+		textTransform: " capitalize",
+	},
+
+	lineDivider: {
+		borderRight: "0.0625vw solid #f4f6ff",
+		width: "1vw",
+		height: "3.6875vw",
+	},
+}));
+
+export default function Header() {
+	const classes = useStyles();
+	return (
+		<div className={styles.headerSection}>
+			{/* LOGO */}
+			<Link to="/" sx={{ width: "fit-content" }}>
+				<img className={styles.logo} alt="" src="dashlogo.svg" />
+			</Link>
+
+			{/* MAPS NAVITEMS FROM navItems */}
+			<div className={styles.navBox}>
+				<nav className={styles.navItems}>
+					{navItems.map((item, key) => {
+						return <MUINav key={key} item={item.id} popup={item.popup} />;
+					})}
+				</nav>
+
+				<Box className={classes.downloadLanguageContainer}>
+					{/* LINE DIVIDER */}
+					<div className={classes.lineDivider} />
+					{/* LANGUAGE SELECTION */}
+					<MUINav
+						item={<LanguageIcon className={classes.globeIcon} id="Language" />}
+						popup={LanguagePopUp}
+					/>
+					{/* DOWNLOAD BUTTON */}
+					<Box className={classes.headerDownloadButton}>Download</Box>
+				</Box>
+			</div>
+		</div>
+	);
+}
+const MUINav = ({ item, popup }) => {
 	const [open, setOpen] = useState(false);
 	const anchorRef = useRef(null);
 
@@ -72,7 +150,7 @@ function MUINav({ item, popup }) {
 	return (
 		<Stack direction="row" spacing={2}>
 			<div>
-				<Button
+				<Box
 					ref={anchorRef}
 					id="composition-button"
 					aria-controls={open ? "composition-menu" : undefined}
@@ -82,7 +160,7 @@ function MUINav({ item, popup }) {
 					className={styles.navItem}
 				>
 					{item}
-				</Button>
+				</Box>
 				<Popper
 					open={open}
 					anchorEl={anchorRef.current}
@@ -120,68 +198,28 @@ function MUINav({ item, popup }) {
 			</div>
 		</Stack>
 	);
-}
-
-export default function Header() {
-	return (
-		<div className={styles.headerSection}>
-			{/* LOGO */}
-			<Link to="/">
-				<img className={styles.logo} alt="" src="dashlogo.svg" />
-			</Link>
-
-			{/* MAPS NAVITEMS FROM navItems */}
-			<div className={styles.navBox}>
-				<nav className={styles.navItems}>
-					{navItems.map((item, key) => {
-						return <MUINav key={key} item={item.id} popup={item.popup} />;
-					})}
-				</nav>
-				<div className={styles.lineDivider} />
-				<MUINav
-					item={
-						<LanguageIcon
-							className={styles.globeIcon}
-							id="Language"
-							// onMouseEnter={(e) => onMouseEnter(e)}
-							// onMouseLeave={(e) => onMouseLeave(e)}
-						/>
-					}
-					popup={LanguagePopUp}
-				/>
-
-				<Button
-					className={styles.button}
-					sx={{ width: 152 }}
-					variant="outline"
-					color="info"
-				>
-					Download
-				</Button>
-			</div>
-		</div>
-	);
-}
+};
 
 function LanguagePopUp() {
+	const classes = useStyles();
 	return (
 		<div className={styles.containerCover}>
 			<div className={styles.popUpContainer}>
 				<div className={styles.popUpContainerItem}>
 					<span>
-						<LanguageIcon className={styles.globeIcon2} />
+						<LanguageIcon className={classes.popUpGlobeIcon} />
 					</span>
 					<p>Français</p>
 				</div>
 				<div className={styles.popUpContainerItem}>
 					<span>
-						<LanguageIcon className={styles.globeIcon2} />
+						<LanguageIcon className={classes.popUpGlobeIcon} />
 					</span>
 					<p>Español</p>
 				</div>
 				<div className={styles.popUpContainerItem}>
 					<span>
-						<LanguageIcon className={styles.globeIcon2} />
+						<LanguageIcon className={classes.popUpGlobeIcon} />
 					</span>
 					<p>Deutsch</p>
 				</div>

@@ -10,7 +10,7 @@ import Footer from "./Footer";
 
 // STYLES
 import styles from "../css/Home.module.css";
-import HeroSection from "./HeroSection";
+import Hero from "./Hero";
 
 // All the functions on the home page are below. They can all be exported to intereact with other components in the app
 
@@ -18,7 +18,7 @@ export const Home = () => {
 	return (
 		<div className={styles.homeFrame}>
 			<Header />
-			<HeroSection />
+			<Hero />
 			<Features />
 			<img className={styles.divider} alt="" src="divider.png" />
 			<DashMarketPlace />
