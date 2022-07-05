@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
 		"& > p": {
 			fontSize: "1.125vw",
 			lineHeight: "1.25vw",
+			color: "#6C89AA"
 		},
 	},
 	ratingBoxIcon: {

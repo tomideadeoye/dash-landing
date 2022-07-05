@@ -60,8 +60,8 @@ const useStyles = makeStyles((theme) => ({
 			flexDirection: "row",
 			alignItems: "center",
 			justifyContent: "center",
-			height: "3vw",
-			width: "3vw",
+			height: "2.3vw",
+			width: "2.3vw",
 			margin: "0 1vw",
 			borderRadius: "100%",
 			border: "0.1vw solid white",
@@ -81,6 +81,16 @@ const useStyles = makeStyles((theme) => ({
 			width: "1.5vw",
 			padding: ".1vw",
 		},
+	},
+
+	copyright: {
+		display: "flex",
+		flexDirection: "row",
+		margin: "4vw 0",
+		justifyContent: "space-between",
+		width: "100%",
+
+		"& > p": { fontSize: "1vw", fontWeight: "400" },
 	},
 }));
 
@@ -195,7 +205,7 @@ export default function Footer() {
 			</Box>
 
 			{/* COPYRIGHT SECTION */}
-			<Box className={styles.copyright}>
+			<Box className={classes.copyright}>
 				<p>
 					© 2022-2023 Dukka, Inc. <br /> Dash Technologies US, Inc. NMLS ID:
 					########

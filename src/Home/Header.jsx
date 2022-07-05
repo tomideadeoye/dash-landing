@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "../css/Home.module.css";
@@ -34,7 +34,6 @@ export const navItems = [
 	},
 ];
 
-
 // STYLES FOR HEADER COMPONENT
 const useStyles = makeStyles((theme) => ({
 	// mainContainer: {
@@ -61,9 +60,9 @@ const useStyles = makeStyles((theme) => ({
 		fill: "#f1962c",
 	},
 	headerDownloadButton: {
-		width: " fit-content",
-		height: " fit-content",
-		padding: " 0.8vw 3.3vw",
+		width: "fit-content",
+		height: "fit-content",
+		padding: " 0.8vw 1.7vw",
 		border: " 0.0625vw solid #fff",
 		borderRadius: " 1.0625vw",
 		fontSize: " 1.2vw",
