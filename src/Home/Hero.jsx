@@ -60,7 +60,7 @@ export default function HeroSection() {
 								<p>App Store</p>
 							</Box>
 							<Box className={classes.centerHorizontally}>
-								<img alt="" src="vector.svg" />
+								<img alt="" src="/vectors/playstore.svg" />
 								<p>Google Play</p>
 							</Box>
 						</Box>

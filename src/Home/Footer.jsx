@@ -1,23 +1,89 @@
 import { Box } from "@mui/system";
 import React from "react";
 import styles from "../css/Home.module.css";
-import { navItems } from "./Header";
+// import { navItems } from "./Header";
 import AppleIcon from "@mui/icons-material/Apple";
 import ShopIcon from "@mui/icons-material/Shop";
 import { Link } from "react-router-dom";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import YouTubeIcon from "@mui/icons-material/YouTube";
+import { makeStyles } from "@mui/styles";
+import { footerNav } from "../Components/navRoutes";
+
+const useStyles = makeStyles((theme) => ({
+	footerLineBreak: {
+		height: "1px",
+		width: "100%",
+		backgroundColor: "#F4F6FF",
+		margin: "2vw 0",
+	},
+
+	helpDocuments: {
+		marginTop: "-3vw",
+		width: "100%",
+		display: "flex",
+		flexDirection: "row",
+		justifyContent: "space-between",
+		margin: "1vw 0",
+		alignItems: "flex-end",
+
+		"& > img": {
+			width: "7vw",
+		},
+	},
+
+	faqBox: {
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "flex-end",
+		"& > img": { width: "5vw", marginBottom: "2vw" },
+	},
+
+	footerNav: {
+		display: "flex",
+		flexDirection: "row",
+
+		"& > li": {
+			listStyleType: "none",
+			fontSize: "1vw",
+			margin: "0 2vw",
+			cursor: "pointer",
+
+			"&:hover": {
+				borderBottom: "1px solid #f1962c",
+			},
+		},
+	},
+
+	socialIcons: {
+		display: "flex",
+		flexDirection: "row",
+		alignItems: "center",
+		justifyContent: "center",
+		"& > div": {
+			display: "flex",
+			flexDirection: "row",
+			alignItems: "center",
+			justifyContent: "center",
+			height: "3vw",
+			width: "3vw",
+			margin: "0 1vw",
+			borderRadius: "100%",
+			border: "0.1vw solid white",
+			padding: "0.5vw",
+
+			"& > img": { width: "100%", height: "100%" },
+		},
+	},
+}));
 
 export default function Footer() {
+	const classes = useStyles();
+
 	const iconsArray = [
-		<LinkedInIcon />,
-		<InstagramIcon />,
-		<FacebookIcon />,
-		<TwitterIcon />,
-		<YouTubeIcon />,
+		"linkedin.svg",
+		"ig.svg",
+		"facebook.svg",
+		"twitter.svg",
+		"youtube.svg",
 	];
 
 	const content = {
@@ -58,7 +124,7 @@ export default function Footer() {
 				<Box sx={rowBoxStyling}>
 					<Link to={content.appStoreLink}>
 						<Box sx={colBoxStyling} className={styles.downloadIconBox}>
-							<p>download from</p>
+							<p>Download from</p>
 							<Box sx={rowBoxStyling} className={styles.storeDetails}>
 								<AppleIcon /> <p>App Store</p>
 							</Box>
@@ -66,21 +132,26 @@ export default function Footer() {
 					</Link>
 					<Link to={content.googlePlayLink}>
 						<Box sx={colBoxStyling} className={styles.downloadIconBox}>
-							<p>download from</p>
+							<p>Download from</p>
 							<Box sx={rowBoxStyling} className={styles.storeDetails}>
-								<ShopIcon /> <p>Play Store</p>
+								<Box component="img" src="/vectors/playstore.svg" />{" "}
+								<p>Play Store</p>
 							</Box>
 						</Box>
 					</Link>
 				</Box>
 			</div>
 
-			<div className={styles.helpDocuments}>
-				<img src="dashlogo.svg" alt="" />
-				<p>Help documents and FAQ’S </p>
-			</div>
+			<Box className={classes.helpDocuments}>
+				<img src="dashlogo.svg" alt="dash app logo" />
+				<Box className={classes.faqBox}>
+					<Box component="img" src="/vectors/helpdesk.svg" />
+					<p>Help documents and FAQ’S </p>
+				</Box>
+			</Box>
 
-			<hr className={styles.footerLineBreak} />
+			{/* LINE BREAK */}
+			<Box className={classes.footerLineBreak} />
 
 			<Box
 				sx={{
@@ -94,14 +165,16 @@ export default function Footer() {
 				<Box sx={rowBoxStyling}>
 					{iconsArray.map((item, key) => {
 						return (
-							<Link key={key} to="/something" className={styles.socialIcons}>
-								{item}
+							<Link key={key} to="/something" className={classes.socialIcons}>
+								<Box>
+									<Box component="img" src={`/vectors/${item}`} />
+								</Box>
 							</Link>
 						);
 					})}
 				</Box>
-				<nav className={styles.footerNav}>
-					{navItems.map((item, key) => {
+				<nav className={classes.footerNav}>
+					{footerNav.map((item, key) => {
 						return (
 							<li key={key} id={item.id}>
 								{item.id}
@@ -112,12 +185,13 @@ export default function Footer() {
 			</Box>
 
 			{/* COPYRIGHT SECTION */}
-			<div className={styles.copyright}>
+			<Box className={styles.copyright}>
 				<p>
-					© 2022-2023 Dukka, Inc. Dash Technologies US, Inc. NMLS ID: ########
+					© 2022-2023 Dukka, Inc. <br /> Dash Technologies US, Inc. NMLS ID:
+					########
 				</p>
 				<p> Product availability may vary by market. </p>
-			</div>
+			</Box>
 		</div>
 	);
 }

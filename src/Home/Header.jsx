@@ -13,7 +13,7 @@ import Stack from "@mui/material/Stack";
 
 export const navItems = [
 	{
-		id: "Product",
+		id: "Products",
 		link: "/products",
 		popup: ProductPopUp,
 	},

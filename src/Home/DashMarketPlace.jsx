@@ -1,9 +1,23 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import SwipeableButton from "../Components/SwipeableButton";
 import styles from "../css/Home.module.css";
 import styled from "styled-components";
+import { makeStyles } from "@mui/styles";
+
+// makestyles
+const useStyles = makeStyles((theme) => ({
+	sendMoney: {
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "center",
+		justifyContent: "center",
+		width: "100%",
+		borderTop: ".8vw solid  #14243b",
+	},
+}));
 
 export default function DashMarketPlace() {
+	const classes = useStyles();
 	const onSuccess = () => {
 		console.log("Yay! Swipe Success");
 	};
@@ -32,7 +46,7 @@ export default function DashMarketPlace() {
 					src="slideimage-raw01-4@2x.png"
 				/>
 			</div>
-			<div className={styles.sendMoney}>
+			<div className={classes.sendMoney}>
 				<div className={styles.sendMoneyBox}>
 					<img alt="" src="frame-6.svg" className={styles.sendMoneyImage} />
 					<div className={styles.textsBox}>
@@ -63,9 +77,7 @@ const VideoResponsive = styled.div`
 	position: relative;
 	height: 0;
 
-	iframe {
-		left: 0;
-		top: 0;
+	video {
 		height: 100%;
 		width: 100%;
 		position: absolute;
@@ -75,24 +87,27 @@ const VideoResponsive = styled.div`
 
 export function VideoEmbedComponent({ source }) {
 	const [play, setPlay] = useState(false);
+	const vidRef = useRef(null);
+
+	const handlePlay = () => {
+		vidRef.current.play();
+		setPlay(true);
+	};
 
 	return (
 		<>
 			<VideoResponsive>
-				<iframe
-					width="853vw"
-					// height="480vw"
-					// logic for play button
-					src={play ? `${source}?autoplay=1` : source}
-					frameBorder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowFullScreen
+				<video
+					ref={vidRef}
 					title="Dukka Onboarding Video"
+					src={source}
+					type="video/mp4"
+					onEnded={() => setPlay(false)}
 				/>
 			</VideoResponsive>
 
 			{!play && (
-				<div onClick={() => setPlay(true)} className={styles.onboardingVideo}>
+				<div onClick={handlePlay} className={styles.onboardingVideo}>
 					<img alt="" src="playbutton.svg" />
 					Onboarding video
 				</div>

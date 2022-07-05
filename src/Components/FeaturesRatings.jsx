@@ -8,19 +8,19 @@ export default function FeaturesRatings() {
 		"Features and Ratings": [
 			{
 				text: "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem  accusantium doloremque laudantium",
-				icon: "nigeria.svg",
+				icon: "/vectors/nigeria.svg",
 				image: "ladyinglass.svg",
 				offset: "0vw",
 			},
 			{
 				text: "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem  accusantium doloremque laudantium",
-				icon: "Ghana.svg",
+				icon: "/vectors/ghana.svg",
 				image: "lady.svg",
 				offset: "5vw",
 			},
 			{
 				text: "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem  accusantium doloremque laudantium",
-				icon: "Ghana.svg",
+				icon: "/vectors/southafrica.svg",
 				image: "blackguy.svg",
 				offset: "-1vw",
 			},

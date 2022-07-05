@@ -344,13 +344,7 @@ body {
 /* MARKET PALCE ENDS ================== */
 
 /* SEND MONEY  ================== */
-.sendMoney {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-}
+
 .sendMoneyBox {
 	/* flex-shrink: 1; */
 	display: flex;
@@ -507,22 +501,8 @@ body {
 	width: 100%;
 	margin: 2vw 0;
 }
-.helpDocuments {
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	margin: 1vw 0;
-}
-.footerNav {
-	display: flex;
-	flex-direction: row;
-}
-.footerNav > li {
-	list-style-type: none;
-	font-size: 1vw;
-	margin: 0 2vw;
-}
+
+
 
 .helpDocuments > img {
 	width: 6vw;
@@ -594,5 +574,4 @@ body {
 }
 .copyright > p {
 	font-size: 1vw;
-	width: 22.8vw;
 }
