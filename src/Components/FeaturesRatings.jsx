@@ -1,9 +1,71 @@
 import { Grid } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/system";
 import React from "react";
 import styles from "../css/Home.module.css";
 
+const useStyles = makeStyles((theme) => ({
+	textsBox: {
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "flex-start",
+		justifyContent: "flex-start",
+		marginTop: "3.125vw",
+		width: "60%",
+
+		"& h1": {
+			fontSize: "2.5vw",
+			fontWeight: "600",
+			textAlign: "left",
+			color: "#000",
+			marginBottom: "1vw",
+		},
+
+		"& p": {
+			color: "#000",
+			fontSize: "1.5625vw",
+			lineHeight: "2.5vw",
+			fontWeight: "300",
+			width: "100%",
+		},
+
+		"& div": {
+			"&:nth-child(4)": {
+				marginLeft: "0vw",
+				marginTop: "-3vw",
+				backgroundColor: "#fff",
+			},
+		},
+	},
+
+	ratingBox: {
+		display: "flex",
+		width: "33.3125vw",
+		border: "0.02vw solid #755df5",
+		boxShadow: "8px 8px 12px 4px rgba(24, 4, 129, 0.13)",
+		borderRadius: "1.875vw",
+		margin: "1vw 1vw 1vw 4vw",
+		padding: "2vw",
+		position: "relative",
+
+		"& > p": {
+			fontSize: "1.125vw",
+			lineHeight: "1.25vw",
+		},
+	},
+	ratingBoxIcon: {
+		width: "6.2vw",
+	},
+	ratingBoxImage: {
+		width: "4.5vw",
+		position: "relative",
+		right: "2vw",
+		bottom: "2vw",
+	},
+}));
+
 export default function FeaturesRatings() {
+	const classes = useStyles();
 	const content = {
 		"Features and Ratings": [
 			{
@@ -14,13 +76,14 @@ export default function FeaturesRatings() {
 			},
 			{
 				text: "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem  accusantium doloremque laudantium",
-				icon: "/vectors/ghana.svg",
+				icon: "/vectors/southafrica.svg",
+
 				image: "lady.svg",
 				offset: "5vw",
 			},
 			{
 				text: "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem  accusantium doloremque laudantium",
-				icon: "/vectors/southafrica.svg",
+				icon: "/vectors/ghana.svg",
 				image: "blackguy.svg",
 				offset: "-1vw",
 			},
@@ -31,14 +94,14 @@ export default function FeaturesRatings() {
 	return (
 		<div className={styles.featuresRatings}>
 			<div className={styles.sendMoneyBox}>
-				<div className={styles.textsBox}>
+				<div className={classes.textsBox}>
 					<h1>Features and Rating</h1>
 					{/* loop through the featureData object and render a Feature component for each key/value pair  */}
 					{content["Features and Ratings"].map((item, key) => {
 						return (
 							<div
 								key={key}
-								className={styles.ratingBox}
+								className={classes.ratingBox}
 								style={{
 									left: item.offset,
 								}}
@@ -52,12 +115,12 @@ export default function FeaturesRatings() {
 									<img
 										src={item.icon}
 										alt=""
-										className={styles.ratingBoxIcon}
+										className={classes.ratingBoxIcon}
 									/>
 									<img
 										src={item.image}
 										alt=""
-										className={styles.ratingBoxImage}
+										className={classes.ratingBoxImage}
 									/>
 								</Box>
 								<p>{item.text}</p>

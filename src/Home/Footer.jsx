@@ -1,9 +1,6 @@
 import { Box } from "@mui/system";
 import React from "react";
 import styles from "../css/Home.module.css";
-// import { navItems } from "./Header";
-import AppleIcon from "@mui/icons-material/Apple";
-import ShopIcon from "@mui/icons-material/Shop";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
 import { footerNav } from "../Components/navRoutes";
@@ -73,6 +70,18 @@ const useStyles = makeStyles((theme) => ({
 			"& > img": { width: "100%", height: "100%" },
 		},
 	},
+
+	storeDetails: {
+		"& > p": {
+			color: "#14243b",
+			margin: "0 0.5vw",
+		},
+
+		"& img": {
+			width: "1.5vw",
+			padding: ".1vw",
+		},
+	},
 }));
 
 export default function Footer() {
@@ -125,16 +134,17 @@ export default function Footer() {
 					<Link to={content.appStoreLink}>
 						<Box sx={colBoxStyling} className={styles.downloadIconBox}>
 							<p>Download from</p>
-							<Box sx={rowBoxStyling} className={styles.storeDetails}>
-								<AppleIcon /> <p>App Store</p>
+							<Box sx={rowBoxStyling} className={classes.storeDetails}>
+								<Box component="img" src="/vectors/appstore-dark.svg" />{" "}
+								<p>App Store</p>
 							</Box>
 						</Box>
 					</Link>
 					<Link to={content.googlePlayLink}>
 						<Box sx={colBoxStyling} className={styles.downloadIconBox}>
 							<p>Download from</p>
-							<Box sx={rowBoxStyling} className={styles.storeDetails}>
-								<Box component="img" src="/vectors/playstore.svg" />{" "}
+							<Box sx={rowBoxStyling} className={classes.storeDetails}>
+								<Box component="img" src="/vectors/playstore-dark.svg" />{" "}
 								<p>Play Store</p>
 							</Box>
 						</Box>
